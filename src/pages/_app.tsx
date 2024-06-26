@@ -2,6 +2,7 @@ import React from "react";
 import "@/assets/css/globals.css";
 
 
+
 interface MyApp {
   Component: React.ComponentType<any>;
   pageProps: Record<string, any>;
