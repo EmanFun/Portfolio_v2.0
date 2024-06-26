@@ -1,0 +1,76 @@
+:root {
+    --layout-bg-color: blue;
+
+
+    /*colors*/
+    --primary-color: ;
+    --secondary-color: ;
+    --success-color: ;
+    --warning-color: ;
+    --danger-color: ;
+    --light-color: ;
+    --dark-color: ;
+
+    /*typographic*/
+    --font-family-title: 'Roboto';
+    --font-family-text: 'Consolas';
+    --font-size-base: ;
+    --line-height: ;
+
+    /*screen size*/
+    --screen-sm-max: 575px;
+    --screen-md-max: 767px;
+    --screen-lg-max: 991px;
+    --screen-xl-max: 1199px;
+
+    /*spacing*/
+    --spacing-unit: 8px;
+    --spacing-sm: 2 * var(--spacing-unit);
+    --spacing-md: 3 * var(--spacing-unit);
+    --spacing-lg: 4 * var(--spacing-unit);
+
+    /*border*/
+    --border-radius: 4px;
+    --border-width: 1px;
+    --border-color: var(--light-color);
+
+    /*shadows*/
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 16px rgba(0, 0, 0, 0.2);
+
+    /*Text var*/
+    --text-big-max: 2rem;
+    --text-big-mid: 1.5rem;
+    --text-big-min: 1.25rem;
+
+    --text-medium-max: 1.25rem;
+    --text-medium-mid: 1rem;
+    --text-medium-min: 0.875rem;
+
+    --text-small-max: 1rem;
+    --text-small-mid: 0.75rem;
+    --text-small-min: 0.625rem;
+
+}
+
+body {
+    font-family: 'Consolas', 'Roboto', 'Inconsolata';
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+button {
+    background: transparent;
+    border: none;
+}
+
+input {
+    background-color: transparent;
+}
+
+input::placeholder {
+    left: 25px;
+    position: absolute;
+}
