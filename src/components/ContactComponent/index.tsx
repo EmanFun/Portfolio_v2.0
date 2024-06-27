@@ -6,7 +6,7 @@ const ContactComponent = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleIsOpen = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+  const handleIsOpen = ()=>{
     setIsOpen(!isOpen);
   } 
 

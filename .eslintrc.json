@@ -1,6 +1,10 @@
 {
-  "extends": "next/core-web-vitals",
-  "eslint": {
-    "dependencies": ["next/babel"]
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
+  "rules": {
+  
   }
 }

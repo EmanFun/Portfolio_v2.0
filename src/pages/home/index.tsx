@@ -2,9 +2,9 @@ import { AboutComponent } from "@/components";
 import { Layout } from "@/layouts";
 import React from "react";
 
-interface indexProps {};
 
-function index({}: indexProps) {
+
+function index() {
   return (
     <Layout>
         <AboutComponent/>
