@@ -1,42 +1,48 @@
-.container{
+.layout{
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 1200px) ;
-    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    grid-template-areas: 
+    "aside header header"
+    "aside main main"
+    "footer footer footer";
+    grid-template-columns: 260px 1fr 1fr;
+    grid-template-rows: auto 1fr  auto;
 }
 
 .header{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-area: header;
 
 }
 
 .aside{
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-color: black;
-
+    grid-area: aside;
+    height: 60%;
+    
 }
 
 .main{
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-area: main;
     background-color: green;
+    overflow-y: auto;
 
 }
 
 .footer{
-    grid-column: 1 / 3;
-    grid-row: 3 / 4;
+    grid-area: footer;
     background-color: blue;
 
 }
 
-@media (max-width: var(--screen-md-max)){
-    .container {
-        grid-template-columns: 1fr;
-    }
-    .aside{
-        display: none;
-    }
+@media only screen and (max-width: var(--screen-md-max)){
+    .layout {
+        grid-template-areas:
+          "aside header header"
+          "aside main main"
+          "footer footer footer";
+        grid-template-columns: 1fr; /* Una sola columna para elementos apilados verticalmente */
+      }
+    
 }

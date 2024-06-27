@@ -13,7 +13,7 @@ const TypingAnimation = keyframes`
 `;
 
 export const WrapperHeader = styled.div`
-  height: 300px;
+  height: 200px;
   background-color: orange;
   display: flex;
   align-items: center;
