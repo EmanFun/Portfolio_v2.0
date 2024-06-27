@@ -2,14 +2,14 @@ import { WelcomeMessageComponent } from "@/components";
 import { LayoutLanding } from "@/layouts";
 import React from "react";
 
-interface indexProps {};
 
-function index({}: indexProps) {
+
+function index() {
   return (
     <LayoutLanding>
-        <WelcomeMessageComponent/>
+      <WelcomeMessageComponent />
     </LayoutLanding>
-  ) ;
+  );
 }
 
 export default index;
