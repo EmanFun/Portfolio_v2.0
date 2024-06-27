@@ -4,12 +4,12 @@ import "@/assets/css/globals.css";
 
 
 
-interface MyApp {
+interface MyAppProps {
   Component: React.ComponentType<any>;
   pageProps: Record<string, any>;
 }
 
-const MyApp = ({ Component, pageProps }: MyApp) => {
+const MyApp = ({ Component, pageProps }: MyAppProps) => {
   return (
     <React.StrictMode>
       <Head>
