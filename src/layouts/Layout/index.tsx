@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./styles.module.css";
+import { ContactComponent, HeaderComponent } from "@/components";
 
 export const metadata: Metadata = {
   title: "Emanuel Funes Cv",
@@ -8,12 +9,17 @@ export const metadata: Metadata = {
 };
 
 function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+  useEffect(()=>{},[]);
   return (
-    <div>
-      <header></header>
-      <aside></aside>
-      <main>{children}</main>
-      <footer></footer>
+    <div className={styles.layout}>
+      <header className={styles.header}>
+        <HeaderComponent />
+      </header>
+      <aside className={styles.aside}>
+        <ContactComponent/>
+      </aside>
+      <main className={styles.main}>{children}</main>
+      <footer className={styles.footer}></footer>
     </div>
   );
 }
