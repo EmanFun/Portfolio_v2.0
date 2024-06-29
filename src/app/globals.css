@@ -1,0 +1,43 @@
+:root {
+    --screen-sm-max: 600px;
+    /* Maximum width for small screens */
+    --screen-md-max: 960px;
+    /* Maximum width for medium screens */
+    --screen-lg-max: 1280px;
+    /* Maximum width for large screens */
+    --screen-xl-max: 1536px;
+    /* Maximum width for extra-large screens */
+}
+
+html,
+body {
+    font-family: Roboto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+button {
+    background: transparent;
+    border: none;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+input[type='text']:focus {
+    outline: none;
+    border: none;
+}

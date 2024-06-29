@@ -1,8 +1,9 @@
+'use client'
 import React, { useState } from "react";
 import { WrapperContact, OwnerPhoto, Contacts} from "./styles";
 import ownerImg from '@/assets/img/images.png';
 
-const ContactComponent = () => {
+const ContactComponent: React.FC = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 

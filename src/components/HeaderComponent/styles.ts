@@ -1,5 +1,5 @@
+'use client';
 import styled, { keyframes } from "styled-components";
-
 
 const TypingAnimation = keyframes`
   from { 
@@ -13,20 +13,16 @@ const TypingAnimation = keyframes`
 `;
 
 export const WrapperHeader = styled.div`
-  height: 200px;
-  background-color: orange;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  
-  padding: 2rem;
 `;
 
 export const HeaderMessage = styled.h1`
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
-  animation: ${TypingAnimation} 2s steps(60,end);
+  animation: ${TypingAnimation} 2s steps(60, end);
   min-width: 100px;
 `;
-

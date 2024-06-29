@@ -1,6 +1,6 @@
+'use client';
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
-
 const ExpandWrapper = keyframes`
   from { 
     
@@ -13,6 +13,7 @@ const ExpandWrapper = keyframes`
 `;
 
 export const WrapperContact = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: start;
