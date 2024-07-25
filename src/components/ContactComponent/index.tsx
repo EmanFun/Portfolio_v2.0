@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
-import { WrapperContact, OwnerPhoto, Contacts} from "./styles";
-import ownerImg from '@/assets/img/images.png';
+import { WrapperContact, Contacts} from "./styles";
+
 
 const ContactComponent: React.FC = () => {
 
@@ -13,7 +13,7 @@ const ContactComponent: React.FC = () => {
 
   return (
     <WrapperContact>
-        <OwnerPhoto src={ownerImg} alt="Emanuel photographic" />
+       
         {
           isOpen ? (
             <Contacts >

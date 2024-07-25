@@ -6,12 +6,13 @@ import Layout from "./layout";
 
 
 
-function Page() {
+function Index() {
   return (
     <Layout>
       <WelcomeMessageComponent />
     </Layout>
+    
   );
 }
 
-export default Page;
+export default Index;

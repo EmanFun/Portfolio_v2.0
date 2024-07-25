@@ -1,17 +1,17 @@
-"use client";
-import React from "react";
-import "./globals.css";
-import styles from "./layout.module.css";
 import ThemeProvider from "@/styles/ThemeProvider";
+import React from "react";
+
 
 function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
-        <div className={styles.layout}>
-          <ThemeProvider>{children}</ThemeProvider>
-        </div>
-      </body>
+        <body>
+            <ThemeProvider>
+                <section style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    {children}
+                </section>
+            </ThemeProvider>
+        </body>
     </html>
   );
 }

@@ -18,7 +18,7 @@ export default function WelcomeMessageComponent () {
       setUserName(userName + "!");
       setNameInserted(!nameInserted);
       setTimeout(() => {
-        router.push("/home");
+        router.push("/about");
       }, 3000);
     }
   };
