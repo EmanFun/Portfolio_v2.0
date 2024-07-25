@@ -1,3 +1,4 @@
+'use client';
 import styled, { keyframes } from "styled-components";
 
 export const WrapperMessage = styled.div`
@@ -6,8 +7,8 @@ export const WrapperMessage = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  font-size: var(--text-big-max);
-  font-family: var(--font-family-title);
+  font-size: ${ props => props.theme.textSizes.big.max};
+  font-family: ${ props => props.theme.fonts.title};
 `;
 
 export const Message = styled.h1`
@@ -19,8 +20,8 @@ export const Message = styled.h1`
 export const InputNameUser = styled.input`
   position: relative;
   top: 10px;
-  font-size: var(--text-big-max);
-  font-family: var(--font-family-title);
+  font-size: ${ props => props.theme.textSizes.big.max};
+  font-family: ${ props => props.theme.fonts.title};
   border: none;
   padding: 5px;
 
@@ -28,10 +29,9 @@ export const InputNameUser = styled.input`
   &:focus {
     outline: none;
     border: none;
-    font-size: var(--text-big-max);
+    font-size: ${ props => props.theme.textSizes.big.max};
   }
-  &::selection{
-  }
+
 `;
 const TypingAnimation = keyframes`
   from { 

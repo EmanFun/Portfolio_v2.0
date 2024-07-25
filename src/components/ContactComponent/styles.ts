@@ -1,5 +1,5 @@
+"use client";
 import styled, { keyframes } from "styled-components";
-import Image from "next/image";
 
 const ExpandWrapper = keyframes`
   from { 
@@ -15,17 +15,12 @@ const ExpandWrapper = keyframes`
 export const WrapperContact = styled.div`
   display: flex;
   align-items: center;
-  justify-content: start;
-  flex-direction: column;
+  justify-content: space-between;
+  
   background-color: white;
-  height: 100%;
 `;
 
-export const OwnerPhoto = styled(Image)`
-  margin: 2rem;
-  border: 1px black white;
-  border-radius: 50%;
-`;
+
 
 export const Contacts = styled.div`
   display: flex;

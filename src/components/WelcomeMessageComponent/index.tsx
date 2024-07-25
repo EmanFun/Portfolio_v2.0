@@ -1,8 +1,9 @@
+'use client';
 import React, { useEffect, useRef, useState } from "react";
 import { WrapperMessage, Message, InputNameUser, UserName } from "./styles";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation';
 
-const WelcomeMessageComponent = () => {
+export default function WelcomeMessageComponent () {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const [userName, setUserName] = useState<string>("");
@@ -17,7 +18,7 @@ const WelcomeMessageComponent = () => {
       setUserName(userName + "!");
       setNameInserted(!nameInserted);
       setTimeout(() => {
-        router.push("/home");
+        router.push("/about");
       }, 3000);
     }
   };
@@ -49,4 +50,4 @@ const WelcomeMessageComponent = () => {
   );
 };
 
-export default WelcomeMessageComponent;
+

@@ -1,15 +1,18 @@
+'use client';
 import { WelcomeMessageComponent } from "@/components";
-import { LayoutLanding } from "@/layouts";
+
 import React from "react";
+import Layout from "./layout";
 
 
 
-function index() {
+function Index() {
   return (
-    <LayoutLanding>
+    <Layout>
       <WelcomeMessageComponent />
-    </LayoutLanding>
+    </Layout>
+    
   );
 }
 
-export default index;
+export default Index;
