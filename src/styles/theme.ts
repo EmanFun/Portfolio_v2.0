@@ -1,4 +1,9 @@
+import { fadeIn } from "./GlobalStyles";
+
 const theme = {
+  animations: {
+    fadeIn,
+  },
   colors: {
     layoutBg: "blue",
     // Fill in other colors with your desired values

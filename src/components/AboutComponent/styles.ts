@@ -1,13 +1,13 @@
 "use client";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
-
 
 export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  animation: ${props => props.theme.animations.fadeIn} 1s ease-in-out;
 `
 
 export const WrapperAbout = styled.div`

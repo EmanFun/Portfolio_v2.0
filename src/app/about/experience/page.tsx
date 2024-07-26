@@ -1,9 +1,17 @@
 import React from "react";
+import dynamic from "next/dynamic";
 
-type Props = {};
+const DynamicExperienceComponent = dynamic(
+  () => import("@/components/ExperienceComponent"),
+  { ssr: false }
+);
 
-function Experience({}: Props) {
-  return <div>Experience</div>;
+function Experience() {
+  return (
+    <section>
+      <DynamicExperienceComponent />
+    </section>
+  );
 }
 
 export default Experience;

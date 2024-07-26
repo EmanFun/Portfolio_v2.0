@@ -6,8 +6,8 @@
   "nav main"
   "nav main"
   "nav footer";
-  grid-template-columns:100px 1fr ;
-  grid-template-rows: 1fr 1fr 50px;
+  grid-template-columns:200px 1fr ;
+  grid-template-rows: 1fr 1fr 100px;
 }
 
 
@@ -22,4 +22,5 @@
 
 .footer{
   grid-area: footer;
+  height: 100%;
 }

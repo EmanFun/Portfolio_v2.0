@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "./style";
-import Link from "next/link";
+import { Container, StyledLink } from "./style";
+import { GoMoveToEnd } from "react-icons/go";
 
 
 type Props = {};
@@ -8,19 +8,21 @@ type Props = {};
 function NavComponent({}: Props) {
   return (
     <Container>
-        <Link href={'/about/me'}>
-        About me
-        </Link>
-        <Link href={'/about/experience'}>
-        Experience
-        </Link>
-        <Link href={'/about/skills'}>
-        TechSkill
-        </Link>
-        <Link href={'/about/education'}>
-        Education
-        </Link>
-        <Link href={''}></Link>
+        <StyledLink href={'/about/me'}>
+        About me  <GoMoveToEnd size={22}/>
+        </StyledLink>
+        <StyledLink href={'/about/experience'}>
+        Experience  <GoMoveToEnd size={22}/>
+        </StyledLink>
+        <StyledLink href={'/about/projects'}>
+        Projects <GoMoveToEnd size={22}/>
+        </StyledLink>
+        <StyledLink href={'/about/skills'}>
+        TechSkill <GoMoveToEnd size={22}/>
+        </StyledLink>
+        <StyledLink href={'/about/education'}>
+        Education <GoMoveToEnd size={22}/>
+        </StyledLink>
     </Container>
   );
 }
