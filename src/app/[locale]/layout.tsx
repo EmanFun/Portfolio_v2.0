@@ -1,13 +1,13 @@
 import ThemeProvider from "@/styles/ThemeProvider";
 import React from "react";
+import "./globals.css"
 
-
-function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
         <body>
             <ThemeProvider>
-                <section style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <section>
                     {children}
                 </section>
             </ThemeProvider>
@@ -16,4 +16,4 @@ function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   );
 }
 
-export default Layout;
+export default RootLayout;

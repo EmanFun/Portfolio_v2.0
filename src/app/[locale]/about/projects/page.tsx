@@ -9,7 +9,10 @@ const DynamicProjectsComponent = dynamic(
 
 function Projects() {
   return (
-    <DynamicProjectsComponent/>
+    <section>
+      <DynamicProjectsComponent/>
+    </section>
+    
   );
 }
 

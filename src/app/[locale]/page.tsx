@@ -2,15 +2,15 @@
 import { WelcomeMessageComponent } from "@/components";
 
 import React from "react";
-import Layout from "./layout";
+import RootLayout from "./layout";
 
 
 
 function Index() {
   return (
-    <Layout>
+    <RootLayout>
       <WelcomeMessageComponent />
-    </Layout>
+    </RootLayout>
     
   );
 }
