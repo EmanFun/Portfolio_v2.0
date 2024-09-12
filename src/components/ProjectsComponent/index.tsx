@@ -17,13 +17,13 @@ const projectsArray = [
     {title:'AgileStrat', rol: 'Backend', link: 'https://agilestrat-frontend.vercel.app/', year: "2022" },
     {title: 'StarWarApi', rol: 'Backend', link: 'https://github.com/EmanFun/DockerStarWars', year: "2022" },
     {title:'HenryGaming', rol: 'FullStack', link: 'https://github.com/EmanFun/PF-HENRYGAMING', year: "2021" }, 
-    {title:'PokemonApp', rol: 'FullStack', link: 'https://pokemon-six-ashy.vercel.app/', year: "2021" },
+    {title:'PokemonApp', rol: 'FullStack', link: 'https://dt-poke.vercel.app/', year: "2021" },
 ]
 /* {title: 'PortFolio', rol: 'Frontend', link: 'https://portfolio-inky-eta-41.vercel.app/'},
     {title: 'PortFolio', rol: 'Frontend', link: 'https://portfolio-inky-eta-41.vercel.app/'}, */
 
 
-const ProjectsComponents = () => {
+function ProjectsComponents () {
 
   return (
     <WrapperProjects>

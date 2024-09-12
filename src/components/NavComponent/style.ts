@@ -79,7 +79,7 @@ export const ButtonMenu = styled.button`
   position: absolute;
   top: 0;
   left: 10px;
-  background-color: orange;
+
 `;
 
 export const StyledLink = styled(Link)`
