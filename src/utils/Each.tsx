@@ -1,6 +1,7 @@
 import { ReactNode, Children, ReactElement } from "react";
 
 interface EachProps<T> {
+  // eslint-disable-next-line no-unused-vars
   render: (item: T, index: number) => ReactNode;
   of: T[];
 }

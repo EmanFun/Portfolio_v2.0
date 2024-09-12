@@ -9,7 +9,7 @@ export default function WelcomeMessageComponent() {
   const [clicked, setClicked] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     setClicked(!clicked);
     setTimeout(() => {
       router.push("/about/me");

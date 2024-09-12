@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useWindowWidth = (): number => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);

@@ -19,6 +19,7 @@ function NavComponent() {
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  // eslint-disable-next-line no-unused-vars
   const handleClickOutsideRef = useRef<(event: MouseEvent) => void>();
 
   const toggleMenu = (): void => {

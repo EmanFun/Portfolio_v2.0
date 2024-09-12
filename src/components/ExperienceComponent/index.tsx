@@ -4,7 +4,7 @@ import {
   Container,
   Title,
   WrapperExperiences,
-  Experience,
+  ExperienceWrapper,
   ExperienceHeader,
   ExperienceInfo,
   Company,
@@ -66,9 +66,9 @@ function ExperienceComponent() {
     <Container>
       <Title> Experiencias </Title>
       <WrapperExperiences>
-        {ExperiencesJobs.map((job: Experience) => {
+        {ExperiencesJobs.map((job: Experience, index: number) => {
           return (
-            <Experience>
+            <ExperienceWrapper key={index}>
               <ExperienceHeader>
                 <Company>{job.company}</Company>
                 <TypeJob>{job.typeJob}</TypeJob>
@@ -77,9 +77,9 @@ function ExperienceComponent() {
                 <Responsibilities>{job.responsibilities}</Responsibilities>
                 <FrontTechs>
                     {
-                        job.frontTech.map((tech)=>{
+                        job.frontTech.map((tech, index: number)=>{
                             return (
-                                <Tech>
+                                <Tech key={index}>
                                     {tech}
                                 </Tech>
                             )
@@ -88,15 +88,15 @@ function ExperienceComponent() {
                 </FrontTechs>
                 <BackTechs>
                     {
-                        job.backTech.map((tech)=>{
+                        job.backTech.map((tech, index: number)=>{
                             return (
-                                <Tech>{tech}</Tech>
+                                <Tech key={index}>{tech}</Tech>
                             )
                         })
                     }
                 </BackTechs>
               </ExperienceInfo>
-            </Experience>
+            </ExperienceWrapper>
           );
         })}
       </WrapperExperiences>

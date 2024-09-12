@@ -1,5 +1,5 @@
 'use client';
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.section`
   display: flex;
@@ -15,7 +15,7 @@ export const Title = styled.h1``;
 
 export const WrapperExperiences = styled.div``;
 
-export const Experience = styled.div`
+export const ExperienceWrapper = styled.div`
   border: 1px solid black;
   border-radius: 20px;
   margin: 1rem 0;

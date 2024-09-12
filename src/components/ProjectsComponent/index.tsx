@@ -41,6 +41,6 @@ function ProjectsComponents () {
         </Wrapper>
     </WrapperProjects>
   );
-};
+}
 
 export default ProjectsComponents;

@@ -1,10 +1,9 @@
-'use client';
+"use client";
 import React from "react";
 import {
   SkillWrapper,
   Wrapper,
   Card,
-  TechName,
   Title,
   SubTitle,
 } from "./style";
@@ -86,35 +85,35 @@ function TechnologiesComponent() {
     <SkillWrapper>
       <Title>TECNOLOGÍAS </Title>
 
+      <SubTitle>Front-End</SubTitle>
       <Wrapper>
-        <SubTitle>Front-End</SubTitle>
         <Each
           of={frontTechs}
           render={(IconComponent, index) => (
             <Card key={index}>
-              <IconComponent size={30} />
+              <IconComponent className="icon" size={50} />
             </Card>
           )}
         />
       </Wrapper>
+      <SubTitle>Back-End</SubTitle>
       <Wrapper>
-        <SubTitle>Back-End</SubTitle>
         <Each
           of={backTechs}
           render={(IconComponent, index) => (
             <Card key={index}>
-              <IconComponent size={30} />
+              <IconComponent className="icon" size={50} />
             </Card>
           )}
         />
       </Wrapper>
+      <SubTitle>Others</SubTitle>
       <Wrapper>
-        <SubTitle>Others</SubTitle>
         <Each
           of={otherTechs}
           render={(IconComponent, index) => (
             <Card key={index}>
-              <IconComponent size={30} />
+              <IconComponent className="icon" size={50} />
             </Card>
           )}
         />
