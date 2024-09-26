@@ -1,9 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { WrapperMessage, Message, StyledButton } from "./styles";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
+import {useTranslations} from 'next-intl';
+
 
 export default function WelcomeMessageComponent() {
+  const t = useTranslations();
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const [clicked, setClicked] = useState(false);
@@ -12,12 +15,12 @@ export default function WelcomeMessageComponent() {
   const handleClick = () => {
     setClicked(!clicked);
     setTimeout(() => {
-      router.push("/about/me");
+      router.push("/about");
     }, 2500);
   };
 
   useEffect(() => {
-    router.prefetch("/about/me");
+    router.prefetch("/about");
   }, [router]);
 
   useEffect(() => {
@@ -35,9 +38,9 @@ export default function WelcomeMessageComponent() {
 
   return (
     <WrapperMessage>
-      <Message>Hi, Welcome!</Message>
+      <Message>{t(`LandingPage.welcomeMessage`)}</Message>
       <StyledButton className={clicked ? "animate" : ""} onClick={handleClick}>
-        Continue
+        {t(`LandingPage.continue`)}
       </StyledButton>
     </WrapperMessage>
   );

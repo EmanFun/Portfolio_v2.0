@@ -1,12 +1,9 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
-/* import styled, { isStyledComponent } from 'styled-components'; */
 const nextConfig = {
-    /* webpack: (config, { isServer }) =>{
-        if(!isServer) {
-            config.plugins.push(styled.default);
-        }
-        return config
-    } */
    compiler: {
     styledComponents: true,
    },
@@ -23,4 +20,4 @@ const nextConfig = {
   
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

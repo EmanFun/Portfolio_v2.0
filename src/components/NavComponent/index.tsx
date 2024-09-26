@@ -6,13 +6,18 @@ import {
   ButtonMenu,
   MobileContainer,
   MobileLink,
+  SelectLanguage,
 } from "./style";
 import { GoMoveToEnd } from "react-icons/go";
 import { useWindowWidth } from "@/hoc";
-import { useRouter } from "next/navigation";
+import {useTranslations} from 'next-intl';
+import { useRouter, usePathname } from "@/i18n/routing";
 import { FiMenu } from "react-icons/fi";
+import {useLocale} from "next-intl";
+import { Language } from "@/@types";
 
 function NavComponent() {
+  const t = useTranslations();
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
   const [menuHiding, setMenuHiding] = useState<boolean>(false);
   const windowWidth: number = useWindowWidth();
@@ -21,6 +26,9 @@ function NavComponent() {
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   // eslint-disable-next-line no-unused-vars
   const handleClickOutsideRef = useRef<(event: MouseEvent) => void>();
+  
+  const pathname = usePathname();
+  const currentLocale = useLocale();
 
   const toggleMenu = (): void => {
     if (menuVisible) {
@@ -47,22 +55,32 @@ function NavComponent() {
     }, 1200);
   };
 
+  const changeLanguage= (event: React.ChangeEvent<HTMLSelectElement>)=>{
+    const selectedLocale = event.target.value as Language;
+    router.replace(pathname, { locale: selectedLocale });
+  }
+
+
   const renderLinks = () => (
     <Container>
-      <StyledLink href={"/about/me"}>
-        About me <GoMoveToEnd size={22} />
+      <SelectLanguage value={currentLocale} onChange={changeLanguage}>
+        <option value="es">{t(`Languages.es`)}</option>
+        <option value="en">{t(`Language.en`)}</option>
+      </SelectLanguage>
+      <StyledLink href={"/about"}>
+        {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
       </StyledLink>
       <StyledLink href={"/about/experience"}>
-        Experience <GoMoveToEnd size={22} />
+        {t(`Nav.experience`)} <GoMoveToEnd size={22} />
       </StyledLink>
       <StyledLink href={"/about/projects"}>
-        Projects <GoMoveToEnd size={22} />
+        {t(`Nav.projects`)} <GoMoveToEnd size={22} />
       </StyledLink>
       <StyledLink href={"/about/technologies"}>
-        Technologies <GoMoveToEnd size={22} />
+        {t(`Nav.technologies`)} <GoMoveToEnd size={22} />
       </StyledLink>
       <StyledLink href={"/about/education"}>
-        Education <GoMoveToEnd size={22} />
+        {t(`Nav.education`)} <GoMoveToEnd size={22} />
       </StyledLink>
     </Container>
   );
@@ -109,29 +127,29 @@ function NavComponent() {
             }
           >
             <MobileLink
-              onClick={(event) => handleLinkClick(event, "/about/me")}
+              onClick={(event) => handleLinkClick(event, "/about")}
             >
-              About me <GoMoveToEnd size={22} />
+              {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/experience")}
             >
-              Experience <GoMoveToEnd size={22} />
+              {t(`Nav.experience`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/projects")}
             >
-              Projects <GoMoveToEnd size={22} />
+              {t(`Nav.projects`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/technologies")}
             >
-              Technologies <GoMoveToEnd size={22} />
+              {t(`Nav.technologies`)}Technologies <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/education")}
             >
-              Education <GoMoveToEnd size={22} />
+              {t(`Nav.education`)} <GoMoveToEnd size={22} />
             </MobileLink>
           </MobileContainer>
         </>

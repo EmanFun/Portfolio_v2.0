@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 const slideInLeft = keyframes`
   from {
@@ -79,7 +79,6 @@ export const ButtonMenu = styled.button`
   position: absolute;
   top: 0;
   left: 10px;
-
 `;
 
 export const StyledLink = styled(Link)`
@@ -92,3 +91,7 @@ export const StyledLink = styled(Link)`
     gap: 1.5rem;
   }
 `;
+
+export const SelectLanguage = styled.select`
+  
+`
