@@ -1,52 +1,47 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
-import { WrapperMessage, Message, InputNameUser, UserName } from "./styles";
-import { useRouter } from "next/router";
+import { WrapperMessage, Message, StyledButton } from "./styles";
+import { useRouter } from "@/i18n/routing";
+import {useTranslations} from 'next-intl';
 
-const WelcomeMessageComponent = () => {
+
+export default function WelcomeMessageComponent() {
+  const t = useTranslations();
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
-  const [userName, setUserName] = useState<string>("");
-  const [nameInserted, setNameInserted] = useState<boolean>(false);
+  const [clicked, setClicked] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserName(e.target.value);
+  const handleClick = () => {
+    setClicked(!clicked);
+    setTimeout(() => {
+      router.push("/about");
+    }, 2500);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      setUserName(userName + "!");
-      setNameInserted(!nameInserted);
-      setTimeout(() => {
-        router.push("/home");
-      }, 3000);
-    }
-  };
+  useEffect(() => {
+    router.prefetch("/about");
+  }, [router]);
 
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsClient(true);
+    }
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <WrapperMessage>
-      <Message>Hi, Welcome &nbsp;</Message>
-      {nameInserted ? (
-        <UserName>{userName}</UserName>
-      ) : (
-        <>
-          <InputNameUser
-            ref={inputRef}
-            type="text"
-            placeholder="Enter your first name"
-            onChange={handleInput}
-            onKeyDown={handleKeyDown}
-          />
-          <Message>!</Message>
-        </>
-      )}
+      <Message>{t(`LandingPage.welcomeMessage`)}</Message>
+      <StyledButton className={clicked ? "animate" : ""} onClick={handleClick}>
+        {t(`LandingPage.continue`)}
+      </StyledButton>
     </WrapperMessage>
   );
-};
-
-export default WelcomeMessageComponent;
+}

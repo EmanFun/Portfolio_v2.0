@@ -1,5 +1,5 @@
+"use client";
 import styled, { keyframes } from "styled-components";
-import Image from "next/image";
 
 const ExpandWrapper = keyframes`
   from { 
@@ -8,32 +8,24 @@ const ExpandWrapper = keyframes`
   }
   to { 
     
-    height: 60%;
+    height: 30%;
   }
 `;
-
 export const WrapperContact = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column;
-  background-color: white;
-  height: 100%;
-`;
-
-export const OwnerPhoto = styled(Image)`
-  margin: 2rem;
-  border: 1px black white;
-  border-radius: 50%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+  height: 100px;
 `;
 
 export const Contacts = styled.div`
   display: flex;
   justify-content: center;
+  justify-content: space-around;
   width: 100%;
-  height: 300px;
+
   overflow-y: hidden;
-  animation: ${ExpandWrapper} 3s steps(60, end);
-  background-color: orange;
+  animation: ${ExpandWrapper} 1s steps(60, end), ${props => props.theme.animations.fadeIn} 2s ease-in-out;
   max-height: 300px;
 `;
