@@ -95,3 +95,6 @@ export const StyledLink = styled(Link)`
 export const SelectLanguage = styled.select`
   
 `
+export const SelectMobileLanguage = styled.select`
+
+`

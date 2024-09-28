@@ -7,13 +7,14 @@ import {
   MobileContainer,
   MobileLink,
   SelectLanguage,
+  SelectMobileLanguage,
 } from "./style";
 import { GoMoveToEnd } from "react-icons/go";
 import { useWindowWidth } from "@/hoc";
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { FiMenu } from "react-icons/fi";
-import {useLocale} from "next-intl";
+import { useLocale } from "next-intl";
 import { Language } from "@/@types";
 
 function NavComponent() {
@@ -26,7 +27,7 @@ function NavComponent() {
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   // eslint-disable-next-line no-unused-vars
   const handleClickOutsideRef = useRef<(event: MouseEvent) => void>();
-  
+
   const pathname = usePathname();
   const currentLocale = useLocale();
 
@@ -55,17 +56,16 @@ function NavComponent() {
     }, 1200);
   };
 
-  const changeLanguage= (event: React.ChangeEvent<HTMLSelectElement>)=>{
+  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLocale = event.target.value as Language;
     router.replace(pathname, { locale: selectedLocale });
-  }
-
+  };
 
   const renderLinks = () => (
     <Container>
       <SelectLanguage value={currentLocale} onChange={changeLanguage}>
         <option value="es">{t(`Languages.es`)}</option>
-        <option value="en">{t(`Language.en`)}</option>
+        <option value="en">{t(`Languages.en`)}</option>
       </SelectLanguage>
       <StyledLink href={"/about"}>
         {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
@@ -95,7 +95,7 @@ function NavComponent() {
     }
   };
   useEffect(() => {
-    handleClickOutsideRef.current = handleClickOutside; 
+    handleClickOutsideRef.current = handleClickOutside;
     if (menuVisible && windowWidth <= 479) {
       document.body.style.overflow = "hidden";
       document.addEventListener("mousedown", handleClickOutside);
@@ -126,9 +126,26 @@ function NavComponent() {
                 : ""
             }
           >
-            <MobileLink
-              onClick={(event) => handleLinkClick(event, "/about")}
-            >
+            {menuVisible && !menuHiding ? (
+              <SelectMobileLanguage
+                value={currentLocale}
+                onChange={changeLanguage}
+              >
+                <option value="es">{t(`Languages.es`)}</option>
+                <option value="en">{t(`Languages.en`)}</option>
+              </SelectMobileLanguage>
+            ) : menuVisible && menuHiding ? (
+              <SelectMobileLanguage
+                value={currentLocale}
+                onChange={changeLanguage}
+              >
+                <option value="es">{t(`Languages.es`)}</option>
+                <option value="en">{t(`Languages.en`)}</option>
+              </SelectMobileLanguage>
+            ) : (
+              ""
+            )}
+            <MobileLink onClick={(event) => handleLinkClick(event, "/about")}>
               {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
@@ -144,7 +161,8 @@ function NavComponent() {
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/technologies")}
             >
-              {t(`Nav.technologies`)}Technologies <GoMoveToEnd size={22} />
+              {t(`Nav.technologies`)}
+              <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
               onClick={(event) => handleLinkClick(event, "/about/education")}
