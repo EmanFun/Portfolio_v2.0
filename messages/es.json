@@ -5,7 +5,7 @@
   },
   "LandingPage": {
     "welcomeMessage": "Hola, Bienvenido",
-    "continue": "continuar"
+    "continue": "Continuar"
   },
   "Nav": {
     "aboutMe": "Sobre Mi",
@@ -16,5 +16,12 @@
   },
   "AboutPage": {
     "description": "Hola, soy Desarrollador Web Full Stack y actualmente estudiante de Informática. Tengo experiencia trabajando como Front-end para una consultora internacional, donde he desarrollado habilidades en React, TS, Next. Además de mis habilidades Front-end, tengo sólidos conocimientos en Back-end, incluyendo Node.js, Python, SQL y bases de datos NoSQL Estoy buscando una oportunidad de aplicar y expandir mis habilidades Full Stack, contribuyendo con soluciones innovadoras a su equipo"
+  },
+  "ErrorApp": {
+    "message": "Se ha producido un error inesperado.",
+    "code": "Codigo"
+  },
+  "Common":{
+    "goBack": "Volver atras"
   }
 }

@@ -1,8 +1,10 @@
-import { fadeIn } from "./GlobalStyles";
+import { fadeIn, spinAndScale, enlarge } from "./GlobalStyles";
 
 const theme = {
   animations: {
     fadeIn,
+    spinAndScale,
+    enlarge
   },
   colors: {
     layoutBg: "blue",

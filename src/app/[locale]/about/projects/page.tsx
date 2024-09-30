@@ -1,5 +1,5 @@
-import { ProjectsComponent } from "@/components";
 import React from "react";
+import { ProjectsComponent } from "@/components";
 
 async function Projects() {
   const experiences = await fetch(

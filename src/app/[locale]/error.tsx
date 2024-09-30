@@ -1,8 +1,17 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
+import { ErrorComponent } from "@/components";
 
-const error = () => {
-  return <div>error</div>;
+interface ErrorPageProps {
+  error: Error;
+  reset: () => void;
+}
+
+const Error: React.FC<ErrorPageProps> = ({error}) => {
+  useEffect(()=>{console.error(error)},[error])
+  return (
+    <ErrorComponent error={error}/>
+  );
 };
 
-export default error;
+export default Error;

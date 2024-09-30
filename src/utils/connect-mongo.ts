@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
-  throw new Error("error");
+  throw new Error("Error 001");
 }
 const cached: {
   connection?: typeof mongoose;
@@ -12,7 +12,7 @@ const cached: {
 async function connectMongo() {
   if (!MONGO_URI) {
     throw new Error(
-      `Please define the MONGO_URI environment variable inside .env.local`
+      `Error 001`
     );
   }
   if (cached.connection) {
