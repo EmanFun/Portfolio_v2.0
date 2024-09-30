@@ -1,22 +1,5 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "@/i18n/routing";
-
-const slideInLeft = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-const hideInLeft = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-`;
 
 const sharedStyles = css`
   position: absolute;
@@ -51,12 +34,14 @@ export const MobileContainer = styled.div`
   justify-content: space-around;
 
   &.visible {
-    animation: ${slideInLeft} 1.2s ease-in-out forwards;
+    animation: ${(props) => props.theme.animations.slideInLeft} 1.2s ease-in-out
+      forwards;
     ${sharedStyles}
   }
   &.hiding {
     ${sharedStyles}
-    animation: ${hideInLeft} 1.2s ease-in-out backwards;
+    animation: ${(props) =>
+      props.theme.animations.hideInLeft} 1.2s ease-in-out backwards;
   }
 `;
 
@@ -70,7 +55,7 @@ export const MobileLink = styled.a`
     transform: scale(1.1);
   }
   &.active {
-    animation: ${hideInLeft} 0.6s forwards;
+    animation: ${(props) => props.theme.animations.hideInLeft} 0.6s forwards;
   }
 `;
 
@@ -92,9 +77,5 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const SelectLanguage = styled.select`
-  
-`
-export const SelectMobileLanguage = styled.select`
-
-`
+export const SelectLanguage = styled.select``;
+export const SelectMobileLanguage = styled.select``;

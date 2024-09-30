@@ -1,16 +1,6 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const ExpandWrapper = keyframes`
-  from { 
-    
-    height: 0
-  }
-  to { 
-    
-    height: 30%;
-  }
-`;
 export const WrapperContact = styled.div`
   display: flex;
   align-items: flex-end;
@@ -26,6 +16,6 @@ export const Contacts = styled.div`
   width: 100%;
 
   overflow-y: hidden;
-  animation: ${ExpandWrapper} 1s steps(60, end), ${props => props.theme.animations.fadeIn} 2s ease-in-out;
+  animation: ${(props)=> props.theme.animations.expandWrapper} 1s steps(60, end), ${props => props.theme.animations.fadeIn} 2s ease-in-out;
   max-height: 300px;
 `;

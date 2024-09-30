@@ -1,18 +1,7 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Image from "next/image";
 
-const colorChange = keyframes`
-  0% {
-    border-color: red; 
-  }
-  50% {
-    border-color: blue; 
-  }
-  100% {
-    border-color: red; 
-  }
-`;
 export const Container = styled.section`
   height: 100vh;
   display: flex;
@@ -42,7 +31,7 @@ export const Container = styled.section`
 export const WrapperAbout = styled.div`
   width: 50%;
   @media screen and (max-width: 991px) {
-    min-width:500px;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
   }
@@ -55,7 +44,6 @@ export const WrapperAbout = styled.div`
   }
   @media screen and (max-width: 479px) {
     display: flex;
-
   }
 `;
 
@@ -67,21 +55,19 @@ export const OwnerPhoto = styled(Image)`
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  animation: ${colorChange} 10s linear infinite;
+  animation: ${(props) => props.theme.animations.colorChange} 10s linear
+    infinite;
 
   @media screen and (max-width: 991px) {
     width: 300px;
     height: 300px;
-
   }
 
   @media screen and (max-width: 767px) {
     width: 200px;
     height: 200px;
-
   }
   @media screen and (max-width: 479px) {
     display: flex;
-
   }
 `;
