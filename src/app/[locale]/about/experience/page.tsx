@@ -1,5 +1,10 @@
 import React from "react";
+import type { Metadata } from "next";
 import { ExperienceComponent } from "@/components";
+
+export const metadata: Metadata = {
+  title: "About Experiences",
+};
 
 async function Experience() {
   const experiences = await fetch(
