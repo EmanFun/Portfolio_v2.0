@@ -1,5 +1,6 @@
 export { default as AboutComponent } from './AboutComponent';
 export { default as ContactComponent } from './ContactComponent';
+export { default as ErrorComponent } from './ErrorComponent';
 export { default as ExperienceComponent } from './ExperienceComponent';
 export { default as NavComponent } from './NavComponent';
 export { default as ProjectsComponent } from './ProjectsComponent';
