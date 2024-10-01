@@ -10,7 +10,7 @@ const sharedStyles = css`
   z-index: 10;
 `;
 
-export const Container = styled.section`
+export const Container = styled.div`
   background-color: black;
   color: white;
   height: 100%;
@@ -26,7 +26,7 @@ export const MobileContainer = styled.div`
   background-color: black;
   color: white;
   height: 0;
-  width: auto;
+
 
   display: flex;
   align-items: center;
@@ -48,6 +48,7 @@ export const MobileContainer = styled.div`
 export const MobileLink = styled.a`
   display: flex;
   align-items: center;
+  font-size: ${(props) => props.theme.textSizes.medium.mid};
   @media screen and (max-width: 479px) {
     flex-grow: unset;
   }
@@ -68,6 +69,7 @@ export const ButtonMenu = styled.button`
 
 export const StyledLink = styled(Link)`
   display: flex;
+  font-size: ${(props) => props.theme.textSizes.medium.mid};
   gap: 10px;
   &:hover {
     transform: scale(1.2);

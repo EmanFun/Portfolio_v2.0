@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 async function Projects() {
   const experiences = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/projects`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/projects`,
+    { cache: "no-store" }
   );
-  const data = await experiences.json();
-  console.log(data);
+  const result = await experiences.json();
   return (
     <section>
-      <ProjectsComponent />
+      <ProjectsComponent data={result.data} />
     </section>
   );
 }

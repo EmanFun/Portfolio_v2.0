@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
-export const SkillWrapper = styled.section`
-  height: 81.7vh;
-  padding-top: 7rem;
-  background-image: url("./projectImage.jpg");
-  background-size: cover;
+export const TechnologiesWrapper = styled.div`
+  padding: 2rem;
   color: #090100;
   display: flex;
   align-items: center;
@@ -22,10 +19,12 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: stretch;
   font-weight: bolder;
-
+  @media only screen and (max-width: 1124px) {
+    width: 80%;
+  }
   @media only screen and (max-width: 667px) {
     width: auto;
-    min-height: auto;
+
     margin-bottom: 15px;
     gap: 15px;
     .icon {
@@ -65,14 +64,13 @@ export const Card = styled.div`
   }
 `;
 export const Title = styled.h1`
-  font-size: larger;
-  margin: 0;
+  margin: 2rem;
+  width: 100%;
+  font-size: ${(props) => props.theme.textSizes.big.mid};
 `;
 export const SubTitle = styled.h2`
-  font-size: medium;
-  justify-self: center;
-  margin: 0;
-  padding: 0;
+  font-size: ${(props) => props.theme.textSizes.big.min};
+
 `;
 export const TechName = styled.p`
   text-transform: capitalize;

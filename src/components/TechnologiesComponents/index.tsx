@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import {
-  SkillWrapper,
+  TechnologiesWrapper,
   Wrapper,
   Card,
   Title,
@@ -41,6 +41,7 @@ import { FaTrello } from "react-icons/fa";
 import { SiVisualstudiocode } from "react-icons/si";
 
 import { Each } from "@/utils/Each";
+import { useTranslations } from "next-intl";
 
 export const frontTechs = [
   FaBootstrap,
@@ -81,12 +82,13 @@ export const otherTechs = [
 ];
 
 function TechnologiesComponent() {
+  const t = useTranslations();
   return (
-    <SkillWrapper>
-      <Title>TECNOLOGÍAS </Title>
+    <TechnologiesWrapper>
+      <Title>{t(`TechnologiesPage.Title`)}</Title>
 
-      <SubTitle>Front-End</SubTitle>
       <Wrapper>
+      <SubTitle>Front-End</SubTitle>
         <Each
           of={frontTechs}
           render={(IconComponent, index) => (
@@ -96,8 +98,8 @@ function TechnologiesComponent() {
           )}
         />
       </Wrapper>
-      <SubTitle>Back-End</SubTitle>
       <Wrapper>
+      <SubTitle>Back-End</SubTitle>
         <Each
           of={backTechs}
           render={(IconComponent, index) => (
@@ -107,8 +109,8 @@ function TechnologiesComponent() {
           )}
         />
       </Wrapper>
-      <SubTitle>Others</SubTitle>
       <Wrapper>
+      <SubTitle>Others</SubTitle>
         <Each
           of={otherTechs}
           render={(IconComponent, index) => (
@@ -118,7 +120,7 @@ function TechnologiesComponent() {
           )}
         />
       </Wrapper>
-    </SkillWrapper>
+    </TechnologiesWrapper>
   );
 }
 
