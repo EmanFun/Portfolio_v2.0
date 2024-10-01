@@ -37,7 +37,7 @@ export const StyledRedirect = styled.button`
   padding: 1rem;
   border-radius: 50px;
   &:hover {
-    animation: ${(props) => props.theme.animations.enlarge} 1s ease-in;
+    animation: ${(props) => props.theme.animations.enlarge()} 1s ease-in;
     font-size: large;
   }
 `;

@@ -25,12 +25,61 @@ export const spinAndScale = keyframes`
   }
 `;
 
-export const enlarge = keyframes`
+export const enlarge = (fromSize = "small", toSize = "large") => keyframes`
   from{
-    font-size: small;
+    font-size: ${fromSize};
   }to{
-    font-size: large;
+    font-size: ${toSize};
   }
+`;
+
+export const colorChange = keyframes`
+  0% {
+    border-color: red; 
+  }
+  50% {
+    border-color: blue; 
+  }
+  100% {
+    border-color: red; 
+  }
+`;
+
+export const expandWrapper = keyframes`
+from { 
+  height: 0
+}
+to { 
+  height: 30%;
+}
+`;
+
+export const slideInLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+export const hideInLeft = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+
+export const slideAndFadeOut = keyframes`
+from {
+  transform: translateX(0);
+  opacity: 1;
+}
+to {
+  transform: translateX(100%);
+  opacity: 0;
+}
 `;
 
 export const GlobalStyle = createGlobalStyle`

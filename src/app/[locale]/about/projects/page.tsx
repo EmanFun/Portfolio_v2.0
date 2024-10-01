@@ -1,5 +1,10 @@
 import React from "react";
+import type { Metadata } from "next";
 import { ProjectsComponent } from "@/components";
+
+export const metadata: Metadata = {
+  title: "About Projects",
+};
 
 async function Projects() {
   const experiences = await fetch(
@@ -9,9 +14,8 @@ async function Projects() {
   console.log(data);
   return (
     <section>
-      <ProjectsComponent/>
+      <ProjectsComponent />
     </section>
-    
   );
 }
 
