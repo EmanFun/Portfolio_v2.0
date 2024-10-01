@@ -2,14 +2,18 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const Container = styled.section`
-  height: 100vh;
+export const Container = styled.div`
+  padding: 2rem;
+  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
+`;
+
+export const Wrapper = styled.div`
+  height: 100%;
+  margin: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
-
   @media screen and (max-width: 991px) {
     display: flex;
     flex-direction: column;
@@ -31,7 +35,7 @@ export const Container = styled.section`
 export const WrapperAbout = styled.div`
   width: 50%;
   @media screen and (max-width: 991px) {
-    min-width: 500px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
   }
@@ -47,6 +51,16 @@ export const WrapperAbout = styled.div`
   }
 `;
 
+export const Description = styled.p`
+  max-width: 500px;
+`;
+
+export const Title = styled.h1`
+  margin: 2rem 0;
+  width: 100%;
+  font-size: ${(props) => props.theme.textSizes.big.mid};
+`;
+
 export const OwnerPhoto = styled(Image)`
   margin: 0 auto;
   width: 350px;
@@ -55,6 +69,7 @@ export const OwnerPhoto = styled(Image)`
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  box-shadow: ${(props) => props.theme.shadows.md};
   animation: ${(props) => props.theme.animations.colorChange} 10s linear
     infinite;
 

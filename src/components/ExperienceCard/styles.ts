@@ -1,0 +1,47 @@
+import styled from "styled-components";
+
+export const WrapperCard = styled.div`
+flex-grow: 1;
+flex-basis: 180px;
+  border-radius: 20px;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: orange;
+  box-shadow: ${(props) => props.theme.shadows.md};
+  @media only screen and (max-width: 667px) {
+    margin: 10px;
+    padding: 10px;
+  }
+`;
+
+export const WrapperHead = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const WrapperBody = styled.div``;
+export const WrapperFooter = styled.div``;
+
+export const Title = styled.h1`
+  font-size: ${(props) => props.theme.textSizes.medium.max};
+`;
+export const Label = styled.h2`
+  font-size: ${(props) => props.theme.textSizes.medium.mid};
+`;
+
+export const ResponsibilitiesList = styled.ul`
+min-width: 50px;
+  font-size: ${(props) => props.theme.textSizes.medium.min};
+`;
+export const ListItem = styled.li``;
+
+export const TechsList = styled.ul`
+min-width: 50px;
+  font-size: ${(props) => props.theme.textSizes.medium.min};
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+export const TechItem = styled.li`
+`;

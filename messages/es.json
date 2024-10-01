@@ -15,13 +15,35 @@
     "education": "Educacion"
   },
   "AboutPage": {
+    "Title": "Sobre mi",
     "description": "Hola, soy Desarrollador Web Full Stack y actualmente estudiante de Informática. Tengo experiencia trabajando como Front-end para una consultora internacional, donde he desarrollado habilidades en React, TS, Next. Además de mis habilidades Front-end, tengo sólidos conocimientos en Back-end, incluyendo Node.js, Python, SQL y bases de datos NoSQL Estoy buscando una oportunidad de aplicar y expandir mis habilidades Full Stack, contribuyendo con soluciones innovadoras a su equipo"
+  },
+  "ExperiencePage": {
+    "Title": "Experiencias",
+    "experienceCard": {
+      "company": "Empresa",
+      "responsibilities": "Responsabilidades",
+      "frontTechs": "Tecnologias Frontend",
+      "backTechs": "Tecnologias Backend",
+      "duration": "duracion"
+    }
+  },
+  "ProjectsPage": {
+    "projectCard": {
+      "rol": "Rol",
+      "description": "Descripcion",
+      "link": "Link"
+    },
+    "Title": "Proyectos"
+  },
+  "TechnologiesPage": {
+    "Title": "Tecnologias"
   },
   "ErrorApp": {
     "message": "Se ha producido un error inesperado.",
     "code": "Codigo"
   },
-  "Common":{
+  "Common": {
     "goBack": "Volver atras"
   }
 }

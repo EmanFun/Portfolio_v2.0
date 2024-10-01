@@ -9,7 +9,7 @@ export async function GET() {
     await client.connect();
 
     const db = client.db("portfolio");
-    const collection = db.collection("experience");
+    const collection = db.collection("experiences");
 
     const experiences = await collection.find().toArray();
 

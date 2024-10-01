@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 async function Experience() {
   const experiences = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/experience`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/experience`,
+    { cache: "no-store" }
   );
-  const data = await experiences.json();
-  console.log(data);
+  const result = await experiences.json();
   return (
     <section>
-      <ExperienceComponent />
+      <ExperienceComponent data={result.data} />
     </section>
   );
 }

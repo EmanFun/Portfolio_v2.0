@@ -1,18 +1,18 @@
 export type Language = "es" | "en";
 
 export interface Experience {
-    id: string;
+    id?: string;
     company: string;
     responsibilities: string;
-    fontTechs: string;
-    backTechs: string;
+    frontTechs: string[];
+    backTechs: string[];
     duration: string;
 }
 
 export type Experiences = Experience[];
 
 export interface Project {
-    id: string;
+    id?: string;
     title: string;
     rol: string;
     link: string;
