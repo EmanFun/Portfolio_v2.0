@@ -11,8 +11,8 @@ const sharedStyles = css`
 `;
 
 export const Container = styled.div`
-  background-color: black;
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  color: #d3d3d3;
   height: 100%;
   width: auto;
 
@@ -23,10 +23,9 @@ export const Container = styled.div`
 `;
 
 export const MobileContainer = styled.div`
-  background-color: black;
-  color: white;
+  background: rgba(0, 0, 0, 0.9);
+  color: #d3d3d3;
   height: 0;
-
 
   display: flex;
   align-items: center;
@@ -45,10 +44,18 @@ export const MobileContainer = styled.div`
   }
 `;
 
-export const MobileLink = styled.a`
+interface MobileLinkProps {
+  menuVisible: boolean;
+}
+
+export const MobileLink = styled.a<MobileLinkProps>`
   display: flex;
   align-items: center;
   font-size: ${(props) => props.theme.textSizes.medium.mid};
+  opacity: ${(props) => (props.menuVisible ? 1 : 0)}; /* Controla visibilidad */
+  pointer-events: ${(props) => (props.menuVisible ? 'auto' : 'none')};
+
+
   @media screen and (max-width: 479px) {
     flex-grow: unset;
   }
@@ -79,5 +86,29 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const SelectLanguage = styled.select``;
-export const SelectMobileLanguage = styled.select``;
+export const SelectLanguage = styled.select`
+  background: rgba(200, 200, 200, 0.7);
+  padding: 4px 6px;
+  outline: none;
+  border-radius: 8px;
+
+  &:focus {
+    border: 1px solid #007bff;
+    background: rgba(230, 230, 230, 0.9);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  position: relative;
+`;
+export const SelectMobileLanguage = styled.select`
+  background: rgba(200, 200, 200, 0.7);
+  padding: 4px 6px;
+  outline: none;
+  border-radius: 8px;
+
+  &:focus {
+    border: 1px solid #007bff;
+    background: rgba(230, 230, 230, 0.9);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  position: relative;
+`;

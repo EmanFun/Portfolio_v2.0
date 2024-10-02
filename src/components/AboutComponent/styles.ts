@@ -20,7 +20,6 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    background-color: orange;
     display: flex;
     flex-direction: column;
   }
@@ -29,10 +28,15 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0;
   }
 `;
 
 export const WrapperAbout = styled.div`
+  box-shadow: ${(props) => props.theme.shadows.md};
+  background: rgba(200, 200, 200, 0.7);
+  border-radius: 25px;
+  padding: 1rem;
   width: 50%;
   @media screen and (max-width: 991px) {
     min-width: 300px;
@@ -42,18 +46,16 @@ export const WrapperAbout = styled.div`
 
   @media screen and (max-width: 767px) {
     min-width: 180px;
-    background-color: orange;
     display: flex;
     flex-direction: column;
   }
   @media screen and (max-width: 479px) {
     display: flex;
+    width: 300px;
   }
 `;
 
-export const Description = styled.p`
-  max-width: 500px;
-`;
+export const Description = styled.p``;
 
 export const Title = styled.h1`
   margin: 2rem 0;

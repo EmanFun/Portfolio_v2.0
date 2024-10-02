@@ -41,8 +41,12 @@ export const Wrapper = styled.div`
   }
 `;
 export const Card = styled.div`
+  background: rgba(200, 200, 200, 0.7);
+  box-shadow: ${(props) => props.theme.shadows.md};
+  border-radius: 25px;
   flex-grow: 1;
   flex-basis: 80px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,12 +59,11 @@ export const Card = styled.div`
       font-size: small;
     }
   }
-  svg {
+
+  &:hover {
     transition: transform 0.5s ease-in-out;
-    &:hover {
-      transform: scale(1.5);
-      transition-delay: 0.2s;
-    }
+    transform: scale(1.5);
+    transition-delay: 0.2s;
   }
 `;
 export const Title = styled.h1`
@@ -70,7 +73,6 @@ export const Title = styled.h1`
 `;
 export const SubTitle = styled.h2`
   font-size: ${(props) => props.theme.textSizes.big.min};
-
 `;
 export const TechName = styled.p`
   text-transform: capitalize;

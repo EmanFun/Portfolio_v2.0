@@ -145,34 +145,43 @@ function NavComponent() {
             ) : (
               ""
             )}
-            <MobileLink onClick={(event) => handleLinkClick(event, "/about")}>
+            <MobileLink
+              menuVisible={menuVisible}
+              onClick={(event) => handleLinkClick(event, "/about")}
+            >
               {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
+              menuVisible={menuVisible}
               onClick={(event) => handleLinkClick(event, "/about/experience")}
             >
               {t(`Nav.experience`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
+              menuVisible={menuVisible}
               onClick={(event) => handleLinkClick(event, "/about/projects")}
             >
               {t(`Nav.projects`)} <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
+              menuVisible={menuVisible}
               onClick={(event) => handleLinkClick(event, "/about/technologies")}
             >
               {t(`Nav.technologies`)}
               <GoMoveToEnd size={22} />
             </MobileLink>
             <MobileLink
+              menuVisible={menuVisible}
               onClick={(event) => handleLinkClick(event, "/about/education")}
             >
               {t(`Nav.education`)} <GoMoveToEnd size={22} />
             </MobileLink>
           </MobileContainer>
         </>
-      ) : (
+      ) : windowWidth > 479 ? (
         renderLinks()
+      ) : (
+        ""
       )}
     </>
   );

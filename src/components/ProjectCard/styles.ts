@@ -11,7 +11,7 @@ export const WrapperCard = styled.div`
     flex-basis: 150px;
     flex-grow: unset;
   }
-  background-color: orange;
+  background: rgba(200, 200, 200, 0.7);
   box-shadow: ${(props)=> props.theme.shadows.md};
 `;
 export const WrapperHead = styled.div``;
