@@ -30,7 +30,7 @@ export const LayoutLanding = styled.div`
     z-index: 2;
   }
   @media (max-width: 768px) {
-    background-repeat: repeat-y;
+      background-repeat: repeat-y;
     //background-attachment: scroll; 
   }
 `;
