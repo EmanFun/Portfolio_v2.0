@@ -1,26 +1,19 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Image from "next/image";
 
-const colorChange = keyframes`
-  0% {
-    border-color: red; 
-  }
-  50% {
-    border-color: blue; 
-  }
-  100% {
-    border-color: red; 
-  }
+export const Container = styled.div`
+  padding: 2rem;
+  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
 `;
-export const Container = styled.section`
-  height: 100vh;
+
+export const Wrapper = styled.div`
+  height: 100%;
+  margin: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
-
   @media screen and (max-width: 991px) {
     display: flex;
     flex-direction: column;
@@ -42,7 +35,7 @@ export const Container = styled.section`
 export const WrapperAbout = styled.div`
   width: 50%;
   @media screen and (max-width: 991px) {
-    min-width:500px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
   }
@@ -55,8 +48,17 @@ export const WrapperAbout = styled.div`
   }
   @media screen and (max-width: 479px) {
     display: flex;
-
   }
+`;
+
+export const Description = styled.p`
+  max-width: 500px;
+`;
+
+export const Title = styled.h1`
+  margin: 2rem 0;
+  width: 100%;
+  font-size: ${(props) => props.theme.textSizes.big.mid};
 `;
 
 export const OwnerPhoto = styled(Image)`
@@ -67,21 +69,20 @@ export const OwnerPhoto = styled(Image)`
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  animation: ${colorChange} 10s linear infinite;
+  box-shadow: ${(props) => props.theme.shadows.md};
+  animation: ${(props) => props.theme.animations.colorChange} 10s linear
+    infinite;
 
   @media screen and (max-width: 991px) {
     width: 300px;
     height: 300px;
-
   }
 
   @media screen and (max-width: 767px) {
     width: 200px;
     height: 200px;
-
   }
   @media screen and (max-width: 479px) {
     display: flex;
-
   }
 `;

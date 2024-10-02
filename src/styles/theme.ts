@@ -1,8 +1,24 @@
-import { fadeIn } from "./GlobalStyles";
+import {
+  fadeIn,
+  spinAndScale,
+  enlarge,
+  colorChange,
+  expandWrapper,
+  hideInLeft,
+  slideInLeft,
+  slideAndFadeOut,
+} from "./GlobalStyles";
 
 const theme = {
   animations: {
     fadeIn,
+    spinAndScale,
+    enlarge,
+    colorChange,
+    expandWrapper,
+    hideInLeft,
+    slideInLeft,
+    slideAndFadeOut,
   },
   colors: {
     layoutBg: "blue",

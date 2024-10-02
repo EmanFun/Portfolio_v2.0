@@ -1,16 +1,6 @@
 "use client";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const slideAndFadeOut = keyframes`
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-`;
 export const WrapperMessage = styled.div`
   margin: 0 2rem;
   width: 100%;
@@ -34,7 +24,7 @@ export const StyledButton = styled.button`
     transform: scale(1.2);
   }
   &.animate {
-    animation: ${slideAndFadeOut} 1s forwards;
+    animation: ${(props) => props.theme.animations.slideAndFadeOut} 1s forwards;
     height: 100%;
   }
 `;

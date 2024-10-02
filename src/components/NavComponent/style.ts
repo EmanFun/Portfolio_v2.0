@@ -1,22 +1,5 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "@/i18n/routing";
-
-const slideInLeft = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-const hideInLeft = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-`;
 
 const sharedStyles = css`
   position: absolute;
@@ -27,7 +10,7 @@ const sharedStyles = css`
   z-index: 10;
 `;
 
-export const Container = styled.section`
+export const Container = styled.div`
   background-color: black;
   color: white;
   height: 100%;
@@ -43,7 +26,7 @@ export const MobileContainer = styled.div`
   background-color: black;
   color: white;
   height: 0;
-  width: auto;
+
 
   display: flex;
   align-items: center;
@@ -51,18 +34,21 @@ export const MobileContainer = styled.div`
   justify-content: space-around;
 
   &.visible {
-    animation: ${slideInLeft} 1.2s ease-in-out forwards;
+    animation: ${(props) => props.theme.animations.slideInLeft} 1.2s ease-in-out
+      forwards;
     ${sharedStyles}
   }
   &.hiding {
     ${sharedStyles}
-    animation: ${hideInLeft} 1.2s ease-in-out backwards;
+    animation: ${(props) =>
+      props.theme.animations.hideInLeft} 1.2s ease-in-out backwards;
   }
 `;
 
 export const MobileLink = styled.a`
   display: flex;
   align-items: center;
+  font-size: ${(props) => props.theme.textSizes.medium.mid};
   @media screen and (max-width: 479px) {
     flex-grow: unset;
   }
@@ -70,7 +56,7 @@ export const MobileLink = styled.a`
     transform: scale(1.1);
   }
   &.active {
-    animation: ${hideInLeft} 0.6s forwards;
+    animation: ${(props) => props.theme.animations.hideInLeft} 0.6s forwards;
   }
 `;
 
@@ -83,6 +69,7 @@ export const ButtonMenu = styled.button`
 
 export const StyledLink = styled(Link)`
   display: flex;
+  font-size: ${(props) => props.theme.textSizes.medium.mid};
   gap: 10px;
   &:hover {
     transform: scale(1.2);
@@ -92,9 +79,5 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const SelectLanguage = styled.select`
-  
-`
-export const SelectMobileLanguage = styled.select`
-
-`
+export const SelectLanguage = styled.select``;
+export const SelectMobileLanguage = styled.select``;
