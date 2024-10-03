@@ -3,6 +3,7 @@ import React from "react";
 import {
   Container,
   WrapperAbout,
+  WrapperPhoto,
   OwnerPhoto,
   Title,
   Wrapper,
@@ -16,7 +17,9 @@ const AboutComponent: React.FC = () => {
     <Container>
       <Title>{t(`AboutPage.Title`)}</Title>
       <Wrapper>
-        <OwnerPhoto src={ownerImg} alt="Emanuel photographic" />
+        <WrapperPhoto>
+          <OwnerPhoto src={ownerImg} alt="Emanuel photographic" />
+        </WrapperPhoto>
         <WrapperAbout>
           <Description>{t(`AboutPage.description`)}</Description>
         </WrapperAbout>
