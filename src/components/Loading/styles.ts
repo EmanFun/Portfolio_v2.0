@@ -9,7 +9,7 @@ export const LoadingWrapper = styled.div`
   padding:1rem;
   border: 3px solid gray;
   border-radius: 100%;
-  color: white;
+  color: #d3d3d3;
   background-color: black;
   animation: ${(props) => props.theme.animations.spinAndScale} 2s infinite;
   box-shadow: ${(props)=> props.theme.shadows.lg};

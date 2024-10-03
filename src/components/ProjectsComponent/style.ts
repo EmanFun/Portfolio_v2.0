@@ -54,6 +54,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
+  color: #D9D9D9;
   width: 100%;
   margin: 2rem;
   font-size: ${(props) => props.theme.textSizes.big.max};
