@@ -12,7 +12,7 @@ const sharedStyles = css`
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.6);
-  color: #d3d3d3;
+  color: #D9D9D9;
   height: 100%;
   width: auto;
 
@@ -24,7 +24,7 @@ export const Container = styled.div`
 
 export const MobileContainer = styled.div`
   background: rgba(0, 0, 0, 0.9);
-  color: #d3d3d3;
+  color: #D9D9D9;
   height: 0;
 
   display: flex;
@@ -87,7 +87,8 @@ export const StyledLink = styled(Link)`
 `;
 
 export const SelectLanguage = styled.select`
-  background: rgba(200, 200, 200, 0.7);
+
+  background: #D9D9D9;
   padding: 4px 6px;
   outline: none;
   border-radius: 8px;

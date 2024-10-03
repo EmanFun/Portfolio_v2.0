@@ -7,6 +7,7 @@ export const LayoutLanding = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 
   background-image: url(${backgroundImage.src});

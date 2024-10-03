@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const WrapperMessage = styled.div`
   margin: 0 2rem;
-  width: 100%;
+  width: 90vw;
   display: flex;
   align-items: flex-start;
   justify-content: center;

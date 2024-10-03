@@ -67,6 +67,7 @@ export const Card = styled.div`
   }
 `;
 export const Title = styled.h1`
+  color: #D9D9D9;
   margin: 2rem;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
