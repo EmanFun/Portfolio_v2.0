@@ -1,19 +1,13 @@
 "use client";
 import styled from "styled-components";
-import backgroundImage from "@/assets/img/background.jpg";
 
-export const LayoutLanding = styled.div`
+export const LayoutBlurLanding = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-
-  background-image: url(${backgroundImage.src});
-  background-size: cover;
-  background-position: center;
-
 
   &::before {
     content: "";
@@ -29,9 +23,5 @@ export const LayoutLanding = styled.div`
   & > * {
     position: relative;
     z-index: 2;
-  }
-  @media (max-width: 768px) {
-      background-repeat: repeat-y;
-    //background-attachment: scroll; 
   }
 `;

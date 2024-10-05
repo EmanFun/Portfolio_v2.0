@@ -84,14 +84,13 @@ export const WrapperPhoto = styled.div`
 export const Description = styled.p``;
 
 export const Title = styled.h1`
-  color: #d9d9d9;
-  margin: 2rem 0;
+  color: #000000;
+  margin:2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
 `;
 
 export const OwnerPhoto = styled(Image)`
-
   width: 350px;
   height: 350px;
   border: 4px solid red;

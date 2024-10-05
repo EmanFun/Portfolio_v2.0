@@ -5,21 +5,21 @@ export const WrapperProjects = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 2rem;
+  padding: 2rem;
+  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
   @media only screen and (min-width: 1024px) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   @media only screen and (max-width: 1024px) {
-    margin: 1rem;
+    padding: 1rem;
     height: 90vh;
   }
   @media screen and (max-width: 479px) {
     height: auto;
     margin: 0;
   }
-  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
 `;
 
 export const Wrapper = styled.div`
@@ -54,11 +54,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #D9D9D9;
+  color: #000000;
   width: 100%;
-  margin: 2rem;
-  font-size: ${(props) => props.theme.textSizes.big.max};
+  margin: 2rem 0;
+  font-size: ${(props) => props.theme.textSizes.big.mid};
   @media screen and (max-width: 479px) {
-    width: auto;
+    margin: 2rem 1rem;
   }
 `;
