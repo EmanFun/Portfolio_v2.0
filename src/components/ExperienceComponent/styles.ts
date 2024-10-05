@@ -9,14 +9,13 @@ export const Container = styled.section`
   padding: 2rem;
   animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
   @media only screen and (max-width: 667px) {
-    margin: 10px;
-    padding: 2rem 10px;
+    padding: 1rem;
   }
 `;
 
 export const Title = styled.h1`
-color: #D9D9D9;
-  margin: 2rem;
+  color: #000000;
+  margin: 2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
 `;

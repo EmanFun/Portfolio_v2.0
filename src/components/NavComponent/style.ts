@@ -12,9 +12,9 @@ const sharedStyles = css`
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.6);
-  color: #D9D9D9;
+  color: #d9d9d9;
   height: 100%;
-  width: auto;
+  align-self: flex-end;
 
   display: flex;
   align-items: center;
@@ -24,13 +24,14 @@ export const Container = styled.div`
 
 export const MobileContainer = styled.div`
   background: rgba(0, 0, 0, 0.9);
-  color: #D9D9D9;
+  color: #d9d9d9;
   height: 0;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
   justify-content: space-around;
+  width: 220px;
 
   &.visible {
     animation: ${(props) => props.theme.animations.slideInLeft} 1.2s ease-in-out
@@ -53,8 +54,7 @@ export const MobileLink = styled.a<MobileLinkProps>`
   align-items: center;
   font-size: ${(props) => props.theme.textSizes.medium.mid};
   opacity: ${(props) => (props.menuVisible ? 1 : 0)}; /* Controla visibilidad */
-  pointer-events: ${(props) => (props.menuVisible ? 'auto' : 'none')};
-
+  pointer-events: ${(props) => (props.menuVisible ? "auto" : "none")};
 
   @media screen and (max-width: 479px) {
     flex-grow: unset;
@@ -70,8 +70,8 @@ export const MobileLink = styled.a<MobileLinkProps>`
 export const ButtonMenu = styled.button`
   animation: ${(props) => props.theme.animations.fadeIn} 3s ease-in-out;
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 60px;
+  left: 300px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -87,8 +87,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const SelectLanguage = styled.select`
-
-  background: #D9D9D9;
+  background: #d9d9d9;
   padding: 4px 6px;
   outline: none;
   border-radius: 8px;

@@ -4,7 +4,7 @@ import "./globals.css";
 import StyledComponentsRegistry from "./registry";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { LayoutLanding } from "@/styles/common";
+import { LayoutBlurLanding } from "@/styles/common";
 import '@/styles/globals.css';
 
 async function RootLayout({
@@ -15,13 +15,13 @@ async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <LayoutLanding>
+        <LayoutBlurLanding>
           <NextIntlClientProvider messages={messages}>
             <StyledComponentsRegistry>
               <ThemeProvider>{children}</ThemeProvider>
             </StyledComponentsRegistry>
           </NextIntlClientProvider>
-        </LayoutLanding>
+        </LayoutBlurLanding>
       </body>
     </html>
   );
