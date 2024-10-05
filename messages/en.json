@@ -39,6 +39,9 @@
   "TechnologiesPage": {
     "Title": "Technologies"
   },
+  "EducationPage":{
+    "Title": "Education"
+  },
   "ErrorApp": {
     "message": "An unexpected error has occurred",
     "code": "Code"
