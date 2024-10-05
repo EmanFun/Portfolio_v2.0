@@ -9,8 +9,11 @@
     /* Maximum width for extra-large screens */
 }
 
-html,
+
 body {
+    background: linear-gradient(135deg, #e0e0e0, #d0d0d0, #c0c0c0);
+    background-repeat: repeat;
+    background-attachment: fixed;  
     font-family: Roboto;
     margin: 0;
     padding: 0;

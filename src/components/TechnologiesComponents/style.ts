@@ -8,7 +8,8 @@ export const TechnologiesWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   @media only screen and (max-width: 667px) {
-    gap: 2rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 `;
 export const Wrapper = styled.div`
@@ -67,8 +68,8 @@ export const Card = styled.div`
   }
 `;
 export const Title = styled.h1`
-  color: #D9D9D9;
-  margin: 2rem;
+  color: #000000;
+  margin: 2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
 `;
