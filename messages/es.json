@@ -4,18 +4,18 @@
     "es": "Español"
   },
   "LandingPage": {
-    "welcomeMessage": "Hola, Bienvenido",
+    "welcomeMessage": "Hola, Bienvenido!",
     "continue": "Continuar"
   },
   "Nav": {
-    "aboutMe": "Sobre Mi",
+    "aboutMe": "Sobre mí",
     "experience": "Experiencias",
     "projects": "Proyectos",
-    "technologies": "Tecnologias",
-    "education": "Educacion"
+    "technologies": "Tecnologías",
+    "education": "Educación"
   },
   "AboutPage": {
-    "Title": "Sobre mi",
+    "Title": "Sobre mí",
     "description": "Hola, soy Desarrollador Web Full Stack y actualmente estudiante de Informática. Tengo experiencia trabajando como Front-end para una consultora internacional, donde he desarrollado habilidades en React, TS, Next. Además de mis habilidades Front-end, tengo sólidos conocimientos en Back-end, incluyendo Node.js, Python, SQL y bases de datos NoSQL Estoy buscando una oportunidad de aplicar y expandir mis habilidades Full Stack, contribuyendo con soluciones innovadoras a su equipo"
   },
   "ExperiencePage": {
@@ -23,30 +23,30 @@
     "experienceCard": {
       "company": "Empresa",
       "responsibilities": "Responsabilidades",
-      "frontTechs": "Tecnologias Frontend",
-      "backTechs": "Tecnologias Backend",
-      "duration": "duracion"
+      "frontTechs": "Tecnologías Frontend",
+      "backTechs": "Tecnologías Backend",
+      "duration": "Duración"
     }
   },
   "ProjectsPage": {
     "projectCard": {
       "rol": "Rol",
-      "description": "Descripcion",
+      "description": "Descripción",
       "link": "Link"
     },
     "Title": "Proyectos"
   },
   "TechnologiesPage": {
-    "Title": "Tecnologias"
+    "Title": "Tecnologías"
   },
   "EducationPage":{
-    "Title": "Educacion"
+    "Title": "Educación"
   },
   "ErrorApp": {
     "message": "Se ha producido un error inesperado.",
-    "code": "Codigo"
+    "code": "Código"
   },
   "Common": {
-    "goBack": "Volver atras"
+    "goBack": "Volver atrás"
   }
 }
