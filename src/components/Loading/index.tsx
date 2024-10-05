@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { LoadingWrapper, SubWrapper, Brackets, Letter } from "./styles";
 
