@@ -20,7 +20,7 @@ function ProjectsComponents({data}: ProjectsComponentsProps) {
         <Each
           of={data}
           render={(item: Project, index) => (
-            <ProjectCard key={index} data={item} />
+            item.isReady && <ProjectCard key={index} data={item} />
           )}
         />
       </Wrapper>

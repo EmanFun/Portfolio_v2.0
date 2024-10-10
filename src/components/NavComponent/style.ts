@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "@/i18n/routing";
+import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
 
 const sharedStyles = css`
   position: absolute;
@@ -45,16 +46,16 @@ export const MobileContainer = styled.div`
   }
 `;
 
-interface MobileLinkProps {
-  menuVisible: boolean;
+interface MobileLinkProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
+  $menuVisible: boolean;
 }
 
 export const MobileLink = styled.a<MobileLinkProps>`
   display: flex;
   align-items: center;
   font-size: ${(props) => props.theme.textSizes.medium.mid};
-  opacity: ${(props) => (props.menuVisible ? 1 : 0)}; /* Controla visibilidad */
-  pointer-events: ${(props) => (props.menuVisible ? "auto" : "none")};
+  opacity: ${(props) => (props.$menuVisible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$menuVisible ? "auto" : "none")};
 
   @media screen and (max-width: 479px) {
     flex-grow: unset;
