@@ -18,6 +18,7 @@ export interface Project {
   link: string;
   description?: string;
   year: string;
+  isReady?: boolean; 
 }
 
 export type Projects = Project[];
