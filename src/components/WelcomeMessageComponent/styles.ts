@@ -14,6 +14,7 @@ export const WrapperMessage = styled.div`
   font-family: ${(props) => props.theme.fonts.title};
 `;
 export const Message = styled.h1`
+  font-family: ${(props) => props.theme.fonts.title};
   margin: 0;
 `;
 export const StyledButton = styled.button`
