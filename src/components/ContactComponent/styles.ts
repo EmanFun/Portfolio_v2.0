@@ -16,6 +16,12 @@ export const Contacts = styled.div`
   width: 100%;
 
   overflow-y: hidden;
-  animation: ${(props)=> props.theme.animations.expandWrapper} 1s steps(60, end), ${props => props.theme.animations.fadeIn} 2s ease-in-out;
+  animation: ${(props) => props.theme.animations.expandWrapper} 1s
+      steps(60, end),
+    ${(props) => props.theme.animations.fadeIn} 2s ease-in-out;
   max-height: 300px;
+  @media only screen and (max-width: 667px) {
+    display: flex;
+    gap: 10px;
+  }
 `;

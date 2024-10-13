@@ -32,6 +32,7 @@
     "Title": "Projects",
     "projectCard": {
       "rol": "Rol",
+      "year": "Year",
       "description": "Description",
       "link": "Link"
     }

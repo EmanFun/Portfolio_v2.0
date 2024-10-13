@@ -14,7 +14,7 @@ export const TechnologiesWrapper = styled.div`
 `;
 export const Wrapper = styled.div`
   min-height: 250px;
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -74,6 +74,7 @@ export const Title = styled.h1`
   font-size: ${(props) => props.theme.textSizes.big.mid};
 `;
 export const SubTitle = styled.h2`
+  margin: 0;
   font-size: ${(props) => props.theme.textSizes.big.min};
 `;
 export const TechName = styled.p`
