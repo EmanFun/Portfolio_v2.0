@@ -8,7 +8,7 @@ import {
   Title,
   SubTitle,
   Description,
-  /* ProjectLink, */
+  ProjectLink,
 } from "./styles";
 import { Project } from "@/@types";
 import { useTranslations } from "next-intl";
@@ -30,6 +30,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
         <SubTitle>
           {t(`ProjectsPage.projectCard.rol`)}: {data.rol}
         </SubTitle>
+        <SubTitle>
+          {t(`ProjectsPage.projectCard.year`)}: {data.year}
+        </SubTitle>
       </WrapperHead>
       <Wrapper>
         <Description>
@@ -37,9 +40,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
         </Description>
       </Wrapper>
       <WrapperFooter>
-        {/* <ProjectLink href={data.link}>
+         <ProjectLink href={data.link}>
           {t(`ProjectsPage.projectCard.link`)}
-        </ProjectLink> */}
+        </ProjectLink> 
       </WrapperFooter>
     </WrapperCard>
   );

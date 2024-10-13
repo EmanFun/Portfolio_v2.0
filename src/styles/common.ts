@@ -8,6 +8,7 @@ export const LayoutBlurLanding = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: Roboto, sans-serif, Courier, monospace;
 
   &::before {
     content: "";

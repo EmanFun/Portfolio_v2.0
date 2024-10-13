@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+
 :root {
     --screen-sm-max: 600px;
     /* Maximum width for small screens */
