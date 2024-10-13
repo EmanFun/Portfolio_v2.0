@@ -10,18 +10,26 @@ interface ProjectsComponentsProps {
   data: Projects;
 }
 
-function ProjectsComponents({data}: ProjectsComponentsProps) {
+function ProjectsComponents({ data }: ProjectsComponentsProps) {
   const t = useTranslations();
-  console.log("Projects",data)
+  const currentYear = new Date().getFullYear();
+  const orderByYear = data.sort((a, b) => {
+    const yearA = Number(a.year);
+    const yearB = Number(b.year);
+
+    if (yearA === currentYear && yearB !== currentYear) return -1;
+    if (yearB === currentYear && yearA !== currentYear) return 1;
+    return yearB - yearA;
+  });
   return (
     <WrapperProjects>
       <Title>{t(`ProjectsPage.Title`)}</Title>
       <Wrapper>
         <Each
-          of={data}
-          render={(item: Project, index) => (
+          of={orderByYear}
+          render={(item: Project, index) =>
             item.isReady && <ProjectCard key={index} data={item} />
-          )}
+          }
         />
       </Wrapper>
     </WrapperProjects>

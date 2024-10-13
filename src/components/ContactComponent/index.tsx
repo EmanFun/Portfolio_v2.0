@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { WrapperContact, Contacts } from "./styles";
 import Link from "next/link";
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
@@ -10,6 +10,7 @@ import {
   SiLinkedin,
   SiInstagram,
 } from "react-icons/si";
+import { MdContactSupport } from "react-icons/md";
 
 const message = `"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."%0D%0A\nNo hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor.%0D%0A`;
 const subject = `Saludos!`;
@@ -46,15 +47,18 @@ const ContactComponent: React.FC = () => {
           </Link>
           <Link
             href="https://docs.google.com/document/d/1KB9wznPHuY8QpyjwljzCYfs07XKwbC_0OZyxnY0FjCI/edit?usp=sharing"
-            target="blank"
+            target="_blank"
           >
             <FaUser color="black" size={30} />
           </Link>
         </Contacts>
       ) : (
-        <></>
+        <>
+          <button onClick={handleIsOpen}>
+            <MdContactSupport size={30} />
+          </button>
+        </>
       )}
-      <button onClick={handleIsOpen}>{isOpen ? "Close" : "See"}</button>
     </WrapperContact>
   );
 };

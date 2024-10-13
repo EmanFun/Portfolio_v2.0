@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+
 :root {
     --screen-sm-max: 600px;
     /* Maximum width for small screens */
@@ -13,8 +16,8 @@
 body {
     background: linear-gradient(135deg, #e0e0e0, #d0d0d0, #c0c0c0);
     background-repeat: repeat;
-    background-attachment: fixed;  
-    font-family: Roboto;
+    background-attachment: fixed;
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -45,7 +48,7 @@ input[type='text']:focus {
     border: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: unset;
 }
