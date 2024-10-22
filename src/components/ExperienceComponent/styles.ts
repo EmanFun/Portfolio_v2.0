@@ -14,10 +14,16 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ccd5dc;
   margin: 2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
+  @media screen and (max-width: 479px) {
+    text-align: end;
+  }
 `;
 
 export const WrapperExperiences = styled.div`

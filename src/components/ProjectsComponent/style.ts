@@ -17,8 +17,9 @@ export const WrapperProjects = styled.div`
     height: 90vh;
   }
   @media screen and (max-width: 479px) {
-    height: auto;
+    height: 90vh;
     margin: 0;
+    padding: 1rem;
   }
 `;
 
@@ -27,12 +28,12 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1300px) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  @media only screen and (max-width: 1045px) {
+  @media only screen and (max-width: 1300px) {
     height: 80vh;
     overflow-y: scroll;
     box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.3),
@@ -54,11 +55,15 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #000000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+  color: #ccd5dc;
   width: 100%;
   margin: 2rem 0;
   font-size: ${(props) => props.theme.textSizes.big.mid};
   @media screen and (max-width: 479px) {
     margin: 2rem 1rem;
+    text-align: end;
   }
 `;

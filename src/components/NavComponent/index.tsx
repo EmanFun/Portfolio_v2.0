@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import {
   Container,
   StyledLink,
@@ -8,41 +8,49 @@ import {
   MobileLink,
   SelectLanguage,
   SelectMobileLanguage,
+  LanguageBtn,
 } from "./style";
 import { GoMoveToEnd } from "react-icons/go";
-import { useWindowWidth } from "@/hoc";
+import { useNavContext, useWindowWidth } from "@/hooks";
 import { useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { FiMenu } from "react-icons/fi";
 import { useLocale } from "next-intl";
 import { Language } from "@/@types";
+import { IoLanguage } from "react-icons/io5";
+
+export const ButtonMobileMenu: FC = () => {
+  const { buttonRef, toggleMenu } = useNavContext();
+
+  return (
+    <ButtonMenu ref={buttonRef} onClick={toggleMenu}>
+      <div
+        style={{ height: "5px", width: "70%", backgroundColor: "skyblue", borderRadius: "5px" }}
+      ></div>
+      <div
+        style={{ height: "5px", width: "70%", backgroundColor: "skyblue", borderRadius: "5px" }}
+      ></div>
+      <div
+        style={{ height: "5px", width: "70%", backgroundColor: "skyblue", borderRadius: "5px" }}
+      ></div>
+    </ButtonMenu>
+  );
+};
 
 function NavComponent() {
   const t = useTranslations();
-  const [menuVisible, setMenuVisible] = useState<boolean>(false);
-  const [menuHiding, setMenuHiding] = useState<boolean>(false);
+  const [language, setLanguage] = useState<Language>("es");
+  const { menuVisible, setMenuVisible, toggleMenu, menuHiding, setMenuHiding } =
+    useNavContext();
   const windowWidth: number = useWindowWidth();
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement | null>(null);
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
   // eslint-disable-next-line no-unused-vars
   const handleClickOutsideRef = useRef<(event: MouseEvent) => void>();
 
   const pathname = usePathname();
   const currentLocale = useLocale();
 
-  const toggleMenu = (): void => {
-    if (menuVisible) {
-      setMenuHiding(true);
-      setTimeout(() => {
-        setMenuHiding(false);
-        setMenuVisible(!menuVisible);
-      }, 1200);
-    } else {
-      setMenuVisible(!menuVisible);
-    }
-  };
-
+  console.log(menuHiding);
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -51,22 +59,26 @@ function NavComponent() {
     setMenuHiding(true);
     setTimeout(() => {
       setMenuHiding(false);
-      setMenuVisible(false);
+      setMenuVisible(!menuVisible);
       router.push(href);
     }, 1200);
   };
 
-  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLocale = event.target.value as Language;
-    router.replace(pathname, { locale: selectedLocale });
+  const changeLanguage = () => {
+    if (language === "es") {
+      setLanguage("en");
+      router.replace(pathname, { locale: language });
+    } else {
+      setLanguage("es");
+      router.replace(pathname, { locale: language });
+    }
   };
 
   const renderLinks = () => (
     <Container>
-      <SelectLanguage value={currentLocale} onChange={changeLanguage}>
-        <option value="es">{t(`Languages.es`)}</option>
-        <option value="en">{t(`Languages.en`)}</option>
-      </SelectLanguage>
+      <LanguageBtn onClick={changeLanguage}>
+        <IoLanguage size={50} color="#ccd5dc" />
+      </LanguageBtn>
       <StyledLink href={"/about"}>
         {t(`Nav.aboutMe`)} <GoMoveToEnd size={22} />
       </StyledLink>
@@ -90,7 +102,7 @@ function NavComponent() {
       setMenuHiding(true);
       setTimeout(() => {
         setMenuHiding(false);
-        setMenuVisible(false);
+        setMenuVisible(!menuVisible);
       }, 1200);
     }
   };
@@ -111,11 +123,7 @@ function NavComponent() {
     <>
       {windowWidth <= 479 ? (
         <>
-          {!menuVisible && (
-            <ButtonMenu ref={buttonRef} onClick={toggleMenu}>
-              <FiMenu size={30} />
-            </ButtonMenu>
-          )}
+          {!menuVisible && <></>}
           <MobileContainer
             ref={menuRef}
             className={
@@ -127,21 +135,17 @@ function NavComponent() {
             }
           >
             {menuVisible && !menuHiding ? (
-              <SelectMobileLanguage
-                value={currentLocale}
-                onChange={changeLanguage}
-              >
-                <option value="es">{t(`Languages.es`)}</option>
-                <option value="en">{t(`Languages.en`)}</option>
-              </SelectMobileLanguage>
+              <>
+                <LanguageBtn onClick={changeLanguage}>
+                  <IoLanguage size={50} color="#ccd5dc" />
+                </LanguageBtn>
+              </>
             ) : menuVisible && menuHiding ? (
-              <SelectMobileLanguage
-                value={currentLocale}
-                onChange={changeLanguage}
-              >
-                <option value="es">{t(`Languages.es`)}</option>
-                <option value="en">{t(`Languages.en`)}</option>
-              </SelectMobileLanguage>
+              <>
+                <LanguageBtn onClick={changeLanguage}>
+                  <IoLanguage size={50} color="#ccd5dc" />
+                </LanguageBtn>
+              </>
             ) : (
               ""
             )}
@@ -186,4 +190,5 @@ function NavComponent() {
     </>
   );
 }
+
 export default NavComponent;

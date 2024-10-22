@@ -5,8 +5,8 @@ export const WrapperCard = styled.div`
   flex-basis: 180px;
   border-radius: 20px;
   margin: 2rem;
-  padding: 1rem;
-  background: rgba(200, 200, 200, 0.7);
+  padding: 1.5rem;
+  background: rgba(166, 204, 205, 1);
   box-shadow: ${(props) => props.theme.shadows.md};
   @media only screen and (max-width: 667px) {
     margin: 10px 0;
