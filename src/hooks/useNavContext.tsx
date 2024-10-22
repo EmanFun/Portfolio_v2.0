@@ -47,9 +47,17 @@ export const NavProvider: FC<NavProviderProps> = ({ children }) => {
       setMenuVisible(!menuVisible);
     }
   };
-   console.log(menuHiding, menuVisible)
   return (
-    <NavContext.Provider value={{ buttonRef, setMenuVisible, menuVisible, menuHiding, setMenuHiding, toggleMenu }}>
+    <NavContext.Provider
+      value={{
+        buttonRef,
+        setMenuVisible,
+        menuVisible,
+        menuHiding,
+        setMenuHiding,
+        toggleMenu,
+      }}
+    >
       {children}
     </NavContext.Provider>
   );

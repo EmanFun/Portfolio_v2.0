@@ -46,11 +46,8 @@ function NavComponent() {
   const menuRef = useRef<HTMLDivElement | null>(null);
   // eslint-disable-next-line no-unused-vars
   const handleClickOutsideRef = useRef<(event: MouseEvent) => void>();
-
   const pathname = usePathname();
-  const currentLocale = useLocale();
 
-  console.log(menuHiding);
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     href: string
