@@ -8,31 +8,44 @@
     "nav footer";
   grid-template-columns: 200px 1fr;
   grid-template-rows: 1fr 1fr 100px;
+  background-image: url("../../../../public/images/App.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
+
 .nav {
   grid-area: nav;
   height: 100%;
 }
+
 .main {
   width: 100%;
   grid-area: main;
 }
+
 .footer {
   grid-area: footer;
   height: 100%;
 }
+
 @media screen and (max-width: 991px) {
   .layout {
     grid-template-columns: 200px 1fr;
     grid-template-rows: 1fr 1fr 100px;
+    background-attachment: scroll;
   }
 }
+
 @media screen and (max-width: 767px) {
   .layout {
     grid-template-columns: 130px 1fr;
     grid-template-rows: 1fr 1fr 100px;
+    background-attachment: scroll;
   }
 }
+
 @media screen and (max-width: 479px) {
   .layout {
     height: 100vh;
@@ -41,14 +54,19 @@
     display: grid;
     place-items: center;
     grid-template-areas:
+      "."
       "nav"
       "main"
       "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 10px 1fr 100px;
+    grid-template-rows: 50px 20px 1fr 100px;
+    background-attachment: scroll;
+
   }
+
   .nav {
     grid-area: nav;
-    height: 100vh;
+    display: flex;
+
   }
 }

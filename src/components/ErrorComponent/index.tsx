@@ -10,7 +10,7 @@ import {
     ErrorCode,
     StyledRedirect
 } from "./styles";
-import ErrorSvg from '@/assets/svg/alert-error.svg';
+import ErrorSvg from '/public/svg/alert-error.svg';
 
 
 interface ErrorComponentProps {

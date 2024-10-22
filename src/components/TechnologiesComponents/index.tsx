@@ -1,12 +1,6 @@
 "use client";
 import React from "react";
-import {
-  TechnologiesWrapper,
-  Wrapper,
-  Card,
-  Title,
-  SubTitle,
-} from "./style";
+import { TechnologiesWrapper, Wrapper, Card, Title, SubTitle } from "./style";
 
 import { FaBootstrap } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
@@ -42,6 +36,8 @@ import { SiVisualstudiocode } from "react-icons/si";
 
 import { Each } from "@/utils/Each";
 import { useTranslations } from "next-intl";
+import { useWindowWidth } from "@/hooks";
+import { ButtonMobileMenu } from "../NavComponent";
 
 export const frontTechs = [
   FaBootstrap,
@@ -83,12 +79,16 @@ export const otherTechs = [
 
 function TechnologiesComponent() {
   const t = useTranslations();
+  const windowWidth = useWindowWidth();
   return (
     <TechnologiesWrapper>
-      <Title>{t(`TechnologiesPage.Title`)}</Title>
+      <Title>
+        {windowWidth < 479 && <ButtonMobileMenu />}
+        {t(`TechnologiesPage.Title`)}
+      </Title>
 
       <Wrapper>
-      <SubTitle>Front-End</SubTitle>
+        <SubTitle>Front-End</SubTitle>
         <Each
           of={frontTechs}
           render={(IconComponent, index) => (
@@ -99,7 +99,7 @@ function TechnologiesComponent() {
         />
       </Wrapper>
       <Wrapper>
-      <SubTitle>Back-End</SubTitle>
+        <SubTitle>Back-End</SubTitle>
         <Each
           of={backTechs}
           render={(IconComponent, index) => (
@@ -110,7 +110,7 @@ function TechnologiesComponent() {
         />
       </Wrapper>
       <Wrapper>
-      <SubTitle>Others</SubTitle>
+        <SubTitle>Others</SubTitle>
         <Each
           of={otherTechs}
           render={(IconComponent, index) => (

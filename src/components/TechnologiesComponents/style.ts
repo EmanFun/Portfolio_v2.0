@@ -11,6 +11,7 @@ export const TechnologiesWrapper = styled.div`
     padding: 1rem;
     gap: 1rem;
   }
+  animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
 `;
 export const Wrapper = styled.div`
   min-height: 250px;
@@ -42,7 +43,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const Card = styled.div`
-  background: rgba(200, 200, 200, 0.7);
+  background: rgba(166, 204, 205, 1);
   box-shadow: ${(props) => props.theme.shadows.md};
   border-radius: 25px;
   flex-grow: 1;
@@ -52,6 +53,8 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+
   @media only screen and (max-width: 430px) {
     flex-basis: 65px;
     min-width: 65px;
@@ -62,18 +65,24 @@ export const Card = styled.div`
   }
 
   &:hover {
-    transition: transform 0.5s ease-in-out;
     transform: scale(1.5);
     transition-delay: 0.2s;
   }
 `;
 export const Title = styled.h1`
-  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccd5dc;
   margin: 2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
+  @media screen and (max-width: 479px) {
+    text-align: end;
+  }
 `;
 export const SubTitle = styled.h2`
+  color: #ccd5dc;
   margin: 0;
   font-size: ${(props) => props.theme.textSizes.big.min};
 `;
