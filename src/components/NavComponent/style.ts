@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "@/i18n/routing";
-import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
+import { DetailedHTMLProps, AnchorHTMLAttributes } from "react";
 
 const sharedStyles = css`
   position: absolute;
@@ -13,7 +13,7 @@ const sharedStyles = css`
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.6);
-  color: #d9d9d9;
+  color: #ccd5dc;
   height: 100%;
   align-self: flex-end;
 
@@ -25,7 +25,7 @@ export const Container = styled.div`
 
 export const MobileContainer = styled.div`
   background: rgba(0, 0, 0, 0.9);
-  color: #d9d9d9;
+  color: #ccd5dc;
   height: 0;
 
   display: flex;
@@ -46,7 +46,11 @@ export const MobileContainer = styled.div`
   }
 `;
 
-interface MobileLinkProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
+interface MobileLinkProps
+  extends DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
   $menuVisible: boolean;
 }
 
@@ -69,16 +73,25 @@ export const MobileLink = styled.a<MobileLinkProps>`
 `;
 
 export const ButtonMenu = styled.button`
+  justify-self: flex-end;
+  gap: 10px;
+  height: 40px;
+  width: 80px;
+
   animation: ${(props) => props.theme.animations.fadeIn} 3s ease-in-out;
-  position: absolute;
-  top: 60px;
-  left: 300px;
+  transition: transform 0.3s ease-in-out;
+
+  &:active {
+    transform: scale(1.5);
+  }
 `;
 
 export const StyledLink = styled(Link)`
   display: flex;
   font-size: ${(props) => props.theme.textSizes.medium.mid};
   gap: 10px;
+  transition: transform 0.3s ease-in-out;
+
   &:hover {
     transform: scale(1.2);
   }
@@ -112,4 +125,14 @@ export const SelectMobileLanguage = styled.select`
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   position: relative;
+`;
+
+export const LanguageBtn = styled.button`
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;

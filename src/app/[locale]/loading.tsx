@@ -1,14 +1,29 @@
-'use client';
+"use client";
 import Loading from "@/components/Loading";
 import React from "react";
-import { LayoutBlurLanding } from "@/styles/common";
+import Image from "next/image";
+import LoadingBg from "/public/images/ImageBgOne.jpg"
 
-
-const loading:React.FC = () => {
+const loading: React.FC = () => {
   return (
-    <LayoutBlurLanding>
-      <Loading/>
-    </LayoutBlurLanding>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+        width: "100%",
+      }}
+    >
+      <Image
+        src={LoadingBg}
+        alt="Landing background"
+        fill
+        style={{ objectFit: "cover" }}
+        priority
+      />
+      <Loading />
+    </div>
   );
 };
 

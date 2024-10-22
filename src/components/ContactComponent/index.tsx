@@ -28,34 +28,34 @@ const ContactComponent: React.FC = () => {
       {isOpen ? (
         <Contacts>
           <Link href="whatsapp://send?phone=5493518018687">
-            <FaPhoneAlt color="black" size={30} />
+            <FaPhoneAlt color="#628598" size={30} />
           </Link>
           <Link href="https://www.google.com/maps/@-31.4170235,-64.1899042,13z?entry=ttu">
-            <SiHomeadvisor color="black" size={30} />
+            <SiHomeadvisor color="#628598" size={30} />
           </Link>
           <Link href="https://github.com/EmanFun">
-            <SiGithub color="black" size={30} />
+            <SiGithub color="#628598" size={30} />
           </Link>
           <Link href="https://www.linkedin.com/in/emanuelfun">
-            <SiLinkedin color="black" size={30} />
+            <SiLinkedin color="#628598" size={30} />
           </Link>
           <Link href="https://www.instagram.com/emanuel_funs/">
-            <SiInstagram color="black" size={30} />
+            <SiInstagram color="#628598" size={30} />
           </Link>
           <Link href={`mailto:${mailTo}?subject=${subject}&body=${message}`}>
-            <RiMailSendFill color="black" size={31} />
+            <RiMailSendFill color="#628598" size={31} />
           </Link>
           <Link
             href="https://docs.google.com/document/d/1KB9wznPHuY8QpyjwljzCYfs07XKwbC_0OZyxnY0FjCI/edit?usp=sharing"
             target="_blank"
           >
-            <FaUser color="black" size={30} />
+            <FaUser color="#628598" size={30} />
           </Link>
         </Contacts>
       ) : (
         <>
           <button onClick={handleIsOpen}>
-            <MdContactSupport size={30} />
+            <MdContactSupport size={30} color="#628598" />
           </button>
         </>
       )}

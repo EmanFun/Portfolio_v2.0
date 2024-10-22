@@ -5,6 +5,8 @@ import { Each } from "@/utils/Each";
 import ProjectCard from "../ProjectCard";
 import { Project, Projects } from "@/@types";
 import { useTranslations } from "next-intl";
+import { useWindowWidth } from "@/hooks";
+import { ButtonMobileMenu } from "../NavComponent";
 
 interface ProjectsComponentsProps {
   data: Projects;
@@ -21,9 +23,13 @@ function ProjectsComponents({ data }: ProjectsComponentsProps) {
     if (yearB === currentYear && yearA !== currentYear) return 1;
     return yearB - yearA;
   });
+  const windowWidth = useWindowWidth();
   return (
     <WrapperProjects>
-      <Title>{t(`ProjectsPage.Title`)}</Title>
+      <Title>
+        {windowWidth < 479 && <ButtonMobileMenu />}
+        {t(`ProjectsPage.Title`)}
+      </Title>
       <Wrapper>
         <Each
           of={orderByYear}

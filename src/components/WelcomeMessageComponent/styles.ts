@@ -9,6 +9,7 @@ export const WrapperMessage = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  color: #e4bd8e;
   animation: ${(props) => props.theme.animations.fadeIn} 1s ease-in-out;
   font-size: ${(props) => props.theme.textSizes.big.max};
   font-family: ${(props) => props.theme.fonts.title};
@@ -18,6 +19,7 @@ export const Message = styled.h1`
   margin: 0;
 `;
 export const StyledButton = styled.button`
+  color: #e07381;
   font-size: large;
   animation: ${(props) => props.theme.animations.fadeIn} 3s ease-in-out;
   cursor: pointer;

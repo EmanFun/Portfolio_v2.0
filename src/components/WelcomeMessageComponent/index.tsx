@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { WrapperMessage, Message, StyledButton } from "./styles";
 import { useRouter } from "@/i18n/routing";
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
+
 
 
 export default function WelcomeMessageComponent() {
@@ -38,6 +39,7 @@ export default function WelcomeMessageComponent() {
 
   return (
     <WrapperMessage>
+
       <Message>{t(`LandingPage.welcomeMessage`)}</Message>
       <StyledButton className={clicked ? "animate" : ""} onClick={handleClick}>
         {t(`LandingPage.continue`)}

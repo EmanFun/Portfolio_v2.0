@@ -36,7 +36,7 @@ export const Wrapper = styled.div`
 
 export const WrapperAbout = styled.div`
   box-shadow: ${(props) => props.theme.shadows.md};
-  background: rgba(200, 200, 200, 0.7);
+  background: rgba(166, 204, 205, 1);
   border-radius: 25px;
   padding: 1rem;
   width: 60%;
@@ -84,10 +84,16 @@ export const WrapperPhoto = styled.div`
 export const Description = styled.p``;
 
 export const Title = styled.h1`
-  color: #000000;
-  margin:2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccd5dc;
+  margin: 2rem 0;
   width: 100%;
   font-size: ${(props) => props.theme.textSizes.big.mid};
+  @media screen and (max-width: 479px) {
+    text-align: end;
+  }
 `;
 
 export const OwnerPhoto = styled(Image)`
